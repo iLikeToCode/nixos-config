@@ -13,6 +13,8 @@ on:
       - machines/iso.nix
       - .github/workflows/iso.yml
 
+  workflow_dispatch:
+
 jobs:
   build:
     runs-on: ubuntu-latest
