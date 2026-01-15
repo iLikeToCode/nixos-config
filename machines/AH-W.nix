@@ -16,9 +16,15 @@
     dates = "03:00";
   };
 
-  nix.gc.automatic = true;
-  nix.gc.date = "03:00";
-  nix.gc.options = "--delete-older-than 3d";
+  programs.nh = {
+    enable = true;
+
+
+    clean = {
+      enable = true;
+      extraArgs = "--keep 5";
+    };
+  };
 
   users.users.archie = {
     description = "Archie Hurst";
