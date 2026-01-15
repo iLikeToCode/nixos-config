@@ -1,13 +1,9 @@
-{ account, ... }:
+{ config, ... }:
 
 {
   programs.git = {
     enable = true;
-    settings = {
-      user = {
-        name = account.realname;
-        email = account.email;
-      };
-    };
+    userName  = config.home.username;
+    userEmail = "archie@archiesbytes.xyz";
   };
 }

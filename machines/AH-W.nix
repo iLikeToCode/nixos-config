@@ -19,7 +19,6 @@
   programs.nh = {
     enable = true;
 
-
     clean = {
       enable = true;
       extraArgs = "--keep 5";
@@ -28,7 +27,6 @@
 
   users.users.archie = {
     description = "Archie Hurst";
-    email = "archie@archiesbytes.xyz";
     isNormalUser = true;
     extraGroups = [ "dialout" "networkmanager" "wheel" ];
   };

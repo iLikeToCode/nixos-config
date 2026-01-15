@@ -1,11 +1,11 @@
-{ account, ... }:
+{ config, ... }:
 
 {
   imports = [
     ./git.nix
   ];
 
-  home.username = account.username;
-  home.homeDirectory = "/home/${account.username}";
+  home.username = "archie";
+  home.homeDirectory = "/home/archie";
   home.stateVersion = "25.11";
 }
