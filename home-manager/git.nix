@@ -3,7 +3,7 @@
 {
   programs.git = {
     enable = true;
-    userName  = config.home.username;
-    userEmail = "archie@archiesbytes.xyz";
+    user.name  = config.home.username;
+    user.email = "archie@archiesbytes.xyz";
   };
 }
