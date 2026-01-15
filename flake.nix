@@ -18,7 +18,7 @@
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = false;
-              home-manager.users.archie = ./home-manager/archie.nix
+              home-manager.users.archie = ./home-manager/archie.nix;
             }
           ];
         };
