@@ -15,6 +15,8 @@
     ../programs/zsh.nix
     ../programs/virtualisation.nix
     ../programs/node.nix
+    ../programs/networking.nix
+    ../programs/desktop.nix
   ];
 
   system.autoUpgrade = {
