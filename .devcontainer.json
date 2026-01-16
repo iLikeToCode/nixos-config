@@ -10,7 +10,7 @@
 	"customizations": {
 		"vscode": {
 			"extensions": [
-        "usernamehw.errorlens",
+        		"usernamehw.errorlens",
 				"github.copilot",
 				"github.copilot-chat"
 			]
