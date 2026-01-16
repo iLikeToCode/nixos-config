@@ -8,8 +8,9 @@
         bbenoist.nix
         bradlc.vscode-tailwindcss
         editorconfig.editorconfig
-        bradlc.vscode-tailwindcss
-
+        christian-kohler.npm-intellisense
+        astro-build.astro-vscode
+        
         # ── Python ───────────────────────────────────
         ms-python.python
         ms-python.vscode-pylance
