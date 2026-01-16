@@ -41,3 +41,4 @@ jobs:
           tag_name: master-${{ github.sha }}
           name: ISO build ${{ github.sha }}
           files: result/iso/nixos-*.iso
+
