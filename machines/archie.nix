@@ -57,8 +57,8 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
-    chromium
     bitwarden-desktop
+    protonvpn-gui
   ];
 
   system.stateVersion = "25.11";
