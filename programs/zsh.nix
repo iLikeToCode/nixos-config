@@ -14,4 +14,6 @@
             ls = "ls --color=tty -A";
         };
     };
+
+    users.defaultUserShell = pkgs.zsh;
 }
