@@ -6,6 +6,9 @@
       vscode = pkgs.vscode;
       vscodeExtensions = with pkgs.vscode-extensions; [
         bbenoist.nix
+        bradlc.vscode-tailwindcss
+        editorconfig.editorconfig
+        bradlc.vscode-tailwindcss
 
         # ── Python ───────────────────────────────────
         ms-python.python
