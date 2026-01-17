@@ -4,11 +4,18 @@
     systemd.user.services.flatpak-update = {
         Service = {
             Type = "oneshot";
+        };
+
+        serviceConfig = {
             script = "${pkgs.flatpak}/bin/flatpak update -y";
+        };
+
+        Install = {
+            WantedBy = [ "default.target" ];
         };
     };
 
-        systemd.user.timers.flatpak-update = {
+    systemd.user.timers.flatpak-update = {
         Timer = {
             OnCalendar = "daily";
             Persistent = true;
@@ -24,14 +31,17 @@
         };
 
         Service = {
-        Type = "oneshot";
-        script = ''
+            Type = "oneshot";
+        };
+
+        serviceConfig = {
+            script = ''
             ${pkgs.flatpak}/bin/flatpak update -y || true
 
             ${pkgs.flatpak}/bin/flatpak install -y \
-            flathub \
-            org.vinegarhq.Sober
-        '';
+                flathub \
+                org.vinegarhq.Sober
+            '';
         };
 
         Install = {
