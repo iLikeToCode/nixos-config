@@ -17,6 +17,7 @@
     ../programs/node.nix
     ../programs/networking.nix
     ../programs/desktop.nix
+    ../programs/flatpak.nix
   ];
 
   system.autoUpgrade = {
