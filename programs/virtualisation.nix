@@ -11,4 +11,6 @@
         spiceUSBRedirection.enable = true;
         docker.enable = true;
     };
+
+    users.users.archie.extraGroups = [ "docker" ];
 }
