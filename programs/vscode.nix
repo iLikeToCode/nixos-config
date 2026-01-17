@@ -28,7 +28,6 @@
         github.vscode-github-actions
 
         # ── Editor QoL ───────────────────────────────
-        streetsidesoftware.code-spell-checker
         christian-kohler.path-intellisense
         gruntfuggly.todo-tree
         formulahendry.code-runner
