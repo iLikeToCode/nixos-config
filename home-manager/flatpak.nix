@@ -4,7 +4,7 @@
     systemd.user.services.flatpak-update = {
         Service = {
             Type = "oneshot";
-            ExecStart = "${pkgs.flatpak}/bin/flatpak update -y";
+            script = "${pkgs.flatpak}/bin/flatpak update -y";
         };
     };
 
