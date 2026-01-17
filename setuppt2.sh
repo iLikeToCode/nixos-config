@@ -58,15 +58,11 @@ echo "Partitioning $drive..."
 #-------------------------
 # Partitioning
 #-------------------------
-parted -s "$drive" mklabel gpt
-parted -s "$drive" mkpart ESP fat32 1MiB 2049MiB
-parted -s "$drive" set 1 esp on
-disk_mib=$(parted -s "$drive" unit MiB print | awk '/^Disk / { gsub("MiB","",$3); print int($3) }')
-swap_mib=$((8 * 1024))
-root_end=$((disk_mib - swap_mib))
-
-parted -s "$drive" mkpart root ext4 2050MiB "${root_end}MiB"
-parted -s "$drive" mkpart swap linux-swap "${root_end}MiB" 100%
+parted -s $drive -- mklabel gpt
+parted -s $drive -- mkpart ESP fat32 1MiB 2049MiB
+parted -s $drive -- set 1 esp on
+parted -s $drive -- mkpart root ext4 2050MiB -8GiB
+parted -s $drive -- mkpart swap linux-swap -8GiB 100%
 
 partprobe "$drive"
 udevadm settle
