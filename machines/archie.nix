@@ -59,6 +59,8 @@
     wget
     bitwarden-desktop
     protonvpn-gui
+    discord
+    freeplane
   ];
 
   system.stateVersion = "25.11";
