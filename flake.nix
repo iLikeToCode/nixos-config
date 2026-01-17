@@ -35,6 +35,19 @@
             }
           ];
         };
+        ah-hpl = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = attrs;
+          modules = [
+            ./machines/AH-HPL.nix
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = false;
+              home-manager.users.archie = ./home-manager/archie.nix;
+            }
+          ];
+        };
         iso = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           specialArgs = attrs;
