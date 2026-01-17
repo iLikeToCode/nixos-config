@@ -19,14 +19,12 @@
 
         path = [ pkgs.flatpak ];
 
-        serviceConfig = {
-            Type = "oneshot";
-            ExecStart = ''
-                ${pkgs.flatpak}/bin/flatpak update -y --system && \
-                ${pkgs.flatpak}/bin/flatpak install -y --system \
-                    flathub \
-                    org.vinegarhq.Sober
-            '';
-        };
+        script = ''
+            flatpak update -y --system
+
+            flatpak install -y --system \
+            flathub \
+            org.vinegarhq.Sober
+        '';
     };
 }
