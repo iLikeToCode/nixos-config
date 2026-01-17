@@ -3,6 +3,7 @@
 {
   imports = [
     ./git.nix
+    ./flatpak.nix
   ];
 
   home.username = "archie";
