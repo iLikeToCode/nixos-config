@@ -62,6 +62,7 @@
     protonvpn-gui
     discord
     freeplane
+    libreoffice
   ];
 
   system.stateVersion = "25.11";
