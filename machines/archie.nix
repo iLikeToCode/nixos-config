@@ -63,6 +63,7 @@
     discord
     freeplane
     libreoffice
+    blender
   ];
 
   system.stateVersion = "25.11";
