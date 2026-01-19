@@ -65,6 +65,7 @@
     freeplane
     libreoffice
     blender
+    element-desktop
   ];
 
   system.stateVersion = "25.11";
