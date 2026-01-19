@@ -66,6 +66,7 @@
     libreoffice
     blender
     element-desktop
+    rustup
   ];
 
   system.stateVersion = "25.11";

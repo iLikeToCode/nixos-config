@@ -10,6 +10,8 @@
         editorconfig.editorconfig
         christian-kohler.npm-intellisense
         astro-build.astro-vscode
+
+        rust-lang.rust-analyzer
         
         # ── Python ───────────────────────────────────
         ms-python.python
