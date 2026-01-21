@@ -7,10 +7,11 @@
     programs.virt-manager.enable = true;
 
     virtualisation = {
-        libvirtd.enable = true;
+        libvirtd = {
+            enable = true;
+            allowedBridges = [ "nm-bridge" ];
+        };
         spiceUSBRedirection.enable = true;
         docker.enable = true;
     };
-
-    users.users.archie.extraGroups = [ "docker" ];
 }
