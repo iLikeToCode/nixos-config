@@ -61,7 +61,6 @@
     wget
     bitwarden-desktop
     protonvpn-gui
-    discord
     freeplane
     libreoffice
     blender
