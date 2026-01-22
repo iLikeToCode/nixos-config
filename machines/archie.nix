@@ -67,6 +67,7 @@
     element-desktop
     rustup
     gcc
+    discord
   ];
 
   system.stateVersion = "25.11";
