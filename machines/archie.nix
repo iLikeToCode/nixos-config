@@ -67,7 +67,7 @@
     element-desktop
     rustup
     gcc
-    discord
+    vlc
   ];
 
   system.stateVersion = "25.11";
