@@ -5,11 +5,7 @@
   ];
 
   system.autoUpgrade.flake = lib.mkForce "git+https://github.com/iLikeToCode/nixos-config#olp-ml04";
-  environment.systemPackages = lib.mkForce (
-    builtins.filter
-      (pkg: pkg != pkgs.discord)
-      environment.systemPackages
-  ); 
+  shared.programs.discord.enable = lib.mkForce false;
 
   networking.hostName = "OLP-ML04";
 }
