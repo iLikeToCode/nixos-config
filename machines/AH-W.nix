@@ -7,9 +7,8 @@
 
   system.autoUpgrade.flake = lib.mkForce "git+https://github.com/iLikeToCode/nixos-config#ah-w";
 
-  environment.systemPackages = with pkgs; [
-    makemkv
-  ];
+
+  boot.kernelModules = [ "sg" ];
 
   networking.hostName = "AH-W";
 }
