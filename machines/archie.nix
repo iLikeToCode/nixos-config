@@ -68,6 +68,7 @@
     rustup
     gcc
     vlc
+    wine64Packages.full
   ];
 
   system.stateVersion = "25.11";
