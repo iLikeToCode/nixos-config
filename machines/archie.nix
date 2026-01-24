@@ -20,7 +20,7 @@
     ../programs/flatpak.nix
   ];
 
-  fileSystems."/mnt/archie" = {
+  fileSystems."/home/archie/share" = {
     device = "//132.145.48.53/archie";
     fsType = "cifs";
 
