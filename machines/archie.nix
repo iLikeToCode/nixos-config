@@ -20,6 +20,23 @@
     ../programs/flatpak.nix
   ];
 
+  fileSystems."/mnt/archie" = {
+    device = "//132.145.48.53/archie";
+    fsType = "cifs";
+
+    options = [
+      "_netdev"
+      "credentials=/etc/samba/media.creds"
+      "iocharset=utf8"
+      "uid=1000"
+      "gid=1000"
+      "vers=3.1.1"
+      "nofail"
+      "x-systemd.automount"
+    ];
+  };
+
+
   system.autoUpgrade = {
     enable = true;
     flake = self.outPath;
@@ -69,6 +86,7 @@
     gcc
     vlc
     wine64Packages.full
+    cifs-utils
   ];
 
   system.stateVersion = "25.11";
