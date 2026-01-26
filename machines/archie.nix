@@ -20,6 +20,20 @@
     ../programs/flatpak.nix
   ];
 
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      cups-filters
+      cups-browsed
+    ];
+  };
+
   fileSystems."/home/archie/share" = {
     device = "//132.145.48.53/archie";
     fsType = "cifs";
