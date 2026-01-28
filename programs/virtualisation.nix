@@ -3,6 +3,7 @@
 {
     environment.systemPackages = with pkgs; [
         qemu_full
+        virtiofsd
     ];
     programs.virt-manager.enable = true;
 
