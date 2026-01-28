@@ -3,7 +3,6 @@
 {
     environment.systemPackages = with pkgs; [
         qemu_full
-        virtiofsd
     ];
     programs.virt-manager.enable = true;
 
@@ -11,6 +10,7 @@
         libvirtd = {
             enable = true;
             allowedBridges = [ "nm-bridge" ];
+            qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
         };
         spiceUSBRedirection.enable = true;
         docker.enable = true;
