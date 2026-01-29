@@ -69,7 +69,7 @@
   users.users.archie = {
     description = "Archie Hurst";
     isNormalUser = true;
-    extraGroups = [ "dialout" "networkmanager" "wheel" "docker" "libvirt" ];
+    extraGroups = [ "dialout" "networkmanager" "wheel" "docker" "libvirt" "incus-admin" ];
   };
 
   hardware.bluetooth.enable = true;
