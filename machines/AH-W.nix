@@ -1,8 +1,9 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, webots, ... }:
 {
   imports = [
     ./archie.nix
     ../programs/discord.nix
+    ../programs/webots.nix
   ];
 
   system.autoUpgrade.flake = lib.mkForce "git+https://github.com/iLikeToCode/nixos-config#ah-w";

@@ -4,9 +4,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    webots.url = "github:acristoffers/webots-flake";
   };
   outputs =
-    { self, nixpkgs, home-manager, ... }@attrs:
+    { self, nixpkgs, home-manager, webots, ... }@attrs:
     {
       nixosConfigurations = {
         ah-w = nixpkgs.lib.nixosSystem {
