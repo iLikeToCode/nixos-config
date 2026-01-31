@@ -4,7 +4,8 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    webots.url = "github:acristoffers/webots-flake";
+    webots.url = "path:./programs/packages/webots";
+    webots.inputs.nixpkgs.follows = "nixpkgs";
   };
   outputs =
     { self, nixpkgs, home-manager, webots, ... }@attrs:

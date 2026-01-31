@@ -5,11 +5,11 @@
         "systems": "systems"
       },
       "locked": {
-        "lastModified": 1710146030,
-        "narHash": "sha256-SZ5L6eA7HJ/nmkzGG7/ISclqe6oZdOZTNoesiInkXPQ=",
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "b1d9ab70662946ef0850d488da1c9019f3a9752a",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
         "type": "github"
       },
       "original": {
@@ -25,11 +25,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769622371,
-        "narHash": "sha256-Cs1/+P3ntxl9mOIL7/QtItBAzQJ2xjvTMHv7qw0nFV0=",
+        "lastModified": 1769872935,
+        "narHash": "sha256-07HMIGQ/WJeAQJooA7Kkg1SDKxhAiV6eodvOwTX6WKI=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "02d763228d8aff317e6e5a319474b6d4d9d826a5",
+        "rev": "f4ad5068ee8e89e4a7c2e963e10dd35cd77b37b7",
         "type": "github"
       },
       "original": {
@@ -50,22 +50,6 @@
       "original": {
         "owner": "NixOS",
         "ref": "nixos-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1724395761,
-        "narHash": "sha256-zRkDV/nbrnp3Y8oCADf5ETl1sDrdmAW6/bBVJ8EbIdQ=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "ae815cee91b417be55d43781eb4b73ae1ecc396c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -95,34 +79,32 @@
     "webots": {
       "inputs": {
         "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "webots": "webots_2"
       },
       "locked": {
-        "lastModified": 1724572793,
-        "narHash": "sha256-9mMIc3k6wAH6p+2xybsGxzEf/TgvYcGYyvIYNHprolU=",
-        "owner": "acristoffers",
-        "repo": "webots-flake",
-        "rev": "3a863fa643383490c7afbaae0ff9e594ac8210a0",
-        "type": "github"
+        "path": "./programs/packages/webots",
+        "type": "path"
       },
       "original": {
-        "owner": "acristoffers",
-        "repo": "webots-flake",
-        "type": "github"
-      }
+        "path": "./programs/packages/webots",
+        "type": "path"
+      },
+      "parent": []
     },
     "webots_2": {
       "flake": false,
       "locked": {
-        "lastModified": 1687878853,
-        "narHash": "sha256-m97KFWFIjEb9NQfiVklGMTn/8Ix/p3jG4L3fJO2PSCY=",
+        "lastModified": 1738671667,
+        "narHash": "sha256-NnAr/uCM2f4OO3mk2r15QHflxRqsecBNFZayMCi2g8E=",
         "type": "tarball",
-        "url": "https://github.com/cyberbotics/webots/releases/download/R2023b/webots-R2023b-x86-64.tar.bz2"
+        "url": "https://github.com/cyberbotics/webots/releases/download/R2025a/webots-R2025a-x86-64.tar.bz2"
       },
       "original": {
         "type": "tarball",
-        "url": "https://github.com/cyberbotics/webots/releases/download/R2023b/webots-R2023b-x86-64.tar.bz2"
+        "url": "https://github.com/cyberbotics/webots/releases/download/R2025a/webots-R2025a-x86-64.tar.bz2"
       }
     }
   },
