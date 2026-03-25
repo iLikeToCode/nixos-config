@@ -111,7 +111,7 @@
     cifs-utils
     rustup
     rust-analyzer
-    mongodb-compass
+    self.packages.x86_64-linux.mongodb-compass
     slack
     slack-term
     trayscale
