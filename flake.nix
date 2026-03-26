@@ -116,6 +116,7 @@
         import ./. {
           pkgs = import nixpkgs {
             inherit system;
+            config.allowUnfree = true;
           };
           lib = nixpkgs.lib;
           flat = true;
@@ -130,7 +131,10 @@
         );
         images = eachSystem (system:
           let
-            pkgs = nixpkgs.legacyPackages.${system};
+            pkgs = import nixpkgs {
+              inherit system;
+              config.allowUnfree = true;
+            };
             lib = pkgs.lib;
           in
           lib.optionalAttrs (system == "x86_64-linux") {
