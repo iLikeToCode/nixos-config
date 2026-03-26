@@ -75,10 +75,10 @@ in
         "Shift+Print" = ''exec --no-startup-id flameshot screen -p ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png'';
 
         # Alt + Print → full (all screens) to clipboard
-        "Alt+Print" = "exec --no-startup-id flameshot full -c";
+        "Mod1+Print" = "exec --no-startup-id flameshot full -c";
 
         # Alt + Shift + Print → full (all screens) to file
-        "Alt+Shift+Print" = ''exec --no-startup-id flameshot full -p ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png'';
+        "Mod1+Shift+Print" = ''exec --no-startup-id flameshot full -p ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png'';
 
         # Focus
         "${mod}+j" = "focus left";
@@ -115,6 +115,7 @@ in
       exec_always --no-startup-id autorandr --change
       exec --no-startup-id nm-applet
       exec --no-startup-id mkdir -p ~/Pictures/Screenshots
+      exec --no-startup-id flameshot
     '';
   };
 }
