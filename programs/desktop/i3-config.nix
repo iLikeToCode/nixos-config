@@ -74,11 +74,11 @@ in
         # Shift + Print → current screen to file
         "Shift+Print" = ''exec --no-startup-id flameshot screen -p ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png'';
 
-        # Alt + Print → full (all screens) to clipboard
-        "Mod1+Print" = "exec --no-startup-id flameshot full -c";
+        # Win + Print → full (all screens) to clipboard
+        "Mod4+Print" = "exec --no-startup-id flameshot full -c";
 
-        # Alt + Shift + Print → full (all screens) to file
-        "Mod1+Shift+Print" = ''exec --no-startup-id flameshot full -p ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png'';
+        # Win + Shift + Print → full (all screens) to file
+        "Mod4+Shift+Print" = ''exec --no-startup-id flameshot full -p ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png'';
 
         # Focus
         "${mod}+j" = "focus left";
