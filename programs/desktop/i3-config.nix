@@ -64,6 +64,26 @@ in
         "${mod}+Shift+x" = "exec --no-startup-id i3lock-fancy";
         "${mod}+Return" = "exec xfce4-terminal";
 
+        # Screenshots (Flameshot)
+
+        # Win + Shift + S → select to clipboard
+        "Mod4+Shift+s" = "exec --no-startup-id flameshot gui -c";
+
+        # Ctrl + Print → select to file (timestamped)
+        "Ctrl+Print" = ''exec --no-startup-id flameshot gui -p ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png'';
+
+        # Print → current screen to clipboard
+        "Print" = "exec --no-startup-id flameshot screen -c";
+
+        # Shift + Print → current screen to file
+        "Shift+Print" = ''exec --no-startup-id flameshot screen -p ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png'';
+
+        # Win + Print → full (all screens) to clipboard
+        "Mod4+Print" = "exec --no-startup-id flameshot full -c";
+
+        # Win + Shift + Print → full (all screens) to file
+        "Mod4+Shift+Print" = ''exec --no-startup-id flameshot full -p ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%M-%S).png'';
+
         # Focus
         "${mod}+j" = "focus left";
         "${mod}+k" = "focus up";
@@ -98,6 +118,8 @@ in
       exec --no-startup-id gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
       exec_always --no-startup-id autorandr --change
       exec --no-startup-id nm-applet
+      exec --no-startup-id mkdir -p ~/Pictures/Screenshots
+      exec --no-startup-id flameshot
     '';
   };
 }
