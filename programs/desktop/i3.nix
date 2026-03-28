@@ -54,11 +54,8 @@
         self.packages.x86_64-linux.rofi
         xss-lock
         xfce4-terminal
-<<<<<<< HEAD
         brightnessctl
-=======
         flameshot
->>>>>>> d292ca3429f066ac6ade9cf26fde79cf80db1262
       ];
     };
   };
