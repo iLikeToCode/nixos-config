@@ -30,8 +30,12 @@ in
           command = ''echo "Memory: $(free -h | grep Mem | awk '{print $3}')"'';
         };
         volume = {
-          interval = 0.5;
-          command = ''echo "Volume: $(pactl list sinks | grep Volume | head -n1 | awk '{print $5}')"'';
+          interval = 1;
+          command = ''pactl get-sink-volume @DEFAULT_SINK@ | awk '{print "Volume: " $5}' | head -n1'';
+        };
+        brightness = {
+          interval = 1;
+          command = ''echo "Brightness: $(brightnessctl g) / $(brightnessctl m)"'';
         };
         user = {
           interval = "persistent";
@@ -77,8 +81,8 @@ in
         "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume 0 -5%";
 
         # Screen Brightness
-        "XF86MonBrightnessUp" = "exec xbacklight -inc 20";
-        "XF86MonBrightnessDown" = "exec xbacklight -dec 20";
+        "XF86MonBrightnessUp" = "exec brightnessctl set +10%";
+        "XF86MonBrightnessDown" = "exec brightnessctl set 10%-";
       };
       bars = [
         {

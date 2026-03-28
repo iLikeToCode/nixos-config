@@ -54,6 +54,7 @@
         self.packages.x86_64-linux.rofi
         xss-lock
         xfce4-terminal
+        brightnessctl
       ];
     };
   };
