@@ -116,6 +116,7 @@
     slack-term
     trayscale
     btop
+    virt-viewer
   ];
 
   system.stateVersion = "26.05";
