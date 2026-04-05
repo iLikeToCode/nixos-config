@@ -9,7 +9,7 @@
   environment.systemPackages = with pkgs; [
     acpi
     pulseaudio
-    feh
+    self.packages."x86_64-linux".feh
     gcr
     autorandr
   ];
@@ -51,7 +51,7 @@
       extraPackages = with pkgs; [
         i3lock-color
         i3blocks
-        self.packages.x86_64-linux.rofi
+        self.packages."x86_64-linux".rofi
         xss-lock
         xfce4-terminal
         brightnessctl
