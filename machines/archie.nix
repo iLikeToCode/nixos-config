@@ -106,7 +106,6 @@
     bitwarden-desktop
     protonvpn-gui
     freeplane
-    libreoffice
     blender
     element-desktop
     vlc
