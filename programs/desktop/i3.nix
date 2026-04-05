@@ -50,7 +50,7 @@
     windowManager.i3 = {
       enable = true;
       extraPackages = with pkgs; [
-        i3lock-fancy
+        i3lock-color
         i3blocks
         self.packages.x86_64-linux.rofi
         xss-lock
