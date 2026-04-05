@@ -119,6 +119,7 @@
     trayscale
     btop
     virt-viewer
+    spotifywm
   ];
 
   system.stateVersion = "26.05";

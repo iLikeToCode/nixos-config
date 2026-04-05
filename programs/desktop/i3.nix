@@ -12,6 +12,7 @@
     feh
     gcr
     autorandr
+    spotify-tray
   ];
 
   services.libinput.touchpad.naturalScrolling = true;
@@ -56,6 +57,7 @@
         xfce4-terminal
         brightnessctl
         flameshot
+        kdePackages.kstatusnotifieritem
       ];
     };
   };

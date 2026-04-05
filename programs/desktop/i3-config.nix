@@ -56,6 +56,18 @@ in
         names = [ "FiraCode" ];
         size = 10.0;
       };
+      terminal = "xfce4-terminal";
+      assigns = {
+        "1" = [ { class = "Firefox"; } ];
+        "2" = [ { class = "Xfce4-terminal"; } ];
+        "3" = [ { class = "Code"; } ];
+        "11" = [ { class = "PrismLauncher"; } ];
+        "12" = [ { class = "^Minecraft"; } ];
+        "17" = [ { class = "Spotify"; } ];
+        "18" = [ { class = "Slack"; } ];
+        "19" = [ { class = "Element"; } ];
+        "20" = [ { class = "discord"; } ];
+      };
       keybindings = lib.mkOptionDefault {
         # Basic Keybinds
         "${mod}+d" = "exec --no-startup-id rofi -show drun";
@@ -95,6 +107,28 @@ in
         "${mod}+Shift+k" = "move up";
         "${mod}+Shift+l" = "move down";
         "${mod}+Shift+semicolon" = "move right";
+
+        "${mod}+Control+1" = "workspace 11";
+        "${mod}+Control+2" = "workspace 12";
+        "${mod}+Control+3" = "workspace 13";
+        "${mod}+Control+4" = "workspace 14";
+        "${mod}+Control+5" = "workspace 15";
+        "${mod}+Control+6" = "workspace 16";
+        "${mod}+Control+7" = "workspace 17";
+        "${mod}+Control+8" = "workspace 18";
+        "${mod}+Control+9" = "workspace 19";
+        "${mod}+Control+0" = "workspace 20";
+
+        "${mod}+Control+Shift+1" = "move container to workspace 11";
+        "${mod}+Control+Shift+2" = "move container to workspace 12";
+        "${mod}+Control+Shift+3" = "move container to workspace 13";
+        "${mod}+Control+Shift+4" = "move container to workspace 14";
+        "${mod}+Control+Shift+5" = "move container to workspace 15";
+        "${mod}+Control+Shift+6" = "move container to workspace 16";
+        "${mod}+Control+Shift+7" = "move container to workspace 17";
+        "${mod}+Control+Shift+8" = "move container to workspace 18";
+        "${mod}+Control+Shift+9" = "move container to workspace 19";
+        "${mod}+Control+Shift+0" = "move container to workspace 20";
         
         # Audio
         "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume 0 +5%";
@@ -120,6 +154,8 @@ in
       exec --no-startup-id nm-applet
       exec --no-startup-id mkdir -p ~/Pictures/Screenshots
       exec --no-startup-id flameshot
+      exec --no-startup-id spotify-tray
+      exec --no-startup-id i3-msg 'workspace 1'
     '';
   };
 }
