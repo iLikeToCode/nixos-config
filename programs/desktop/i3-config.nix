@@ -74,7 +74,7 @@ in
         "${mod}+shift+d" = "exec --no-startup-id rofi -show window";
         "${mod}+shift+x" = "exec --no-startup-id i3lock --image $HOME/.lock-image";
 
-        "${mod}+f" = "exec firefox";
+        "${mod}+b" = "exec firefox";
         "${mod}+Return" = "exec xfce4-terminal";
 
         # Screenshots (Flameshot)
