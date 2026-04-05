@@ -72,8 +72,22 @@ in
         # Basic Keybinds
         "${mod}+d" = "exec --no-startup-id rofi -show drun";
         "${mod}+shift+d" = "exec --no-startup-id rofi -show window";
-
-        "${mod}+Shift+x" = "exec --no-startup-id i3lock-fancy";
+        "${mod}+l" = ''
+          exec --no-startup-id i3lock \
+            --image $HOME/.background_image \
+            --blur 5 \
+            --indicator \
+            --radius 120 \
+            --ring-width 8 \
+            --inside-color=00000000 \
+            --ring-color=ffffff50 \
+            --line-uses-ring \
+            --time-color=ffffffff \
+            --date-color=ffffffff \
+            --keylayout 1 \
+            --ind-pos="x+0:y+0"
+        '';
+        
         "${mod}+Return" = "exec xfce4-terminal";
 
         # Screenshots (Flameshot)
