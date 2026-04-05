@@ -72,10 +72,7 @@ in
         # Basic Keybinds
         "${mod}+d" = "exec --no-startup-id rofi -show drun";
         "${mod}+shift+d" = "exec --no-startup-id rofi -show window";
-        "${mod}+shift+x" = ''
-          exec --no-startup-id i3lock \
-            --image $HOME/.background-image
-        '';
+        "${mod}+shift+x" = "exec --no-startup-id i3lock --image $HOME/.lock-image";
 
         "${mod}+Return" = "exec xfce4-terminal";
 
@@ -152,8 +149,7 @@ in
       exec --no-startup-id xset s 300 10
       exec --no-startup-id xset dpms 300 300 300
       
-      exec --no-startup-id i3lock \
-        --image $HOME/.background-image
+      exec --no-startup-id xss-lock -- i3lock --image $HOME/.lock-image
 
       exec --no-startup-id gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
       exec_always --no-startup-id autorandr --change
