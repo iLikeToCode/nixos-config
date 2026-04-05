@@ -72,7 +72,7 @@ in
         # Basic Keybinds
         "${mod}+d" = "exec --no-startup-id rofi -show drun";
         "${mod}+shift+d" = "exec --no-startup-id rofi -show window";
-        "${mod}+l" = ''
+        "${mod}+shift+x" = ''
           exec --no-startup-id i3lock \
             --image $HOME/.background_image \
             --blur 5 \
@@ -87,7 +87,7 @@ in
             --keylayout 1 \
             --ind-pos="x+0:y+0"
         '';
-        
+
         "${mod}+Return" = "exec xfce4-terminal";
 
         # Screenshots (Flameshot)
