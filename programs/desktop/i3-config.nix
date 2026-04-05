@@ -58,7 +58,7 @@ in
       };
       terminal = "xfce4-terminal";
       assigns = {
-        "1" = [ { class = "Firefox"; } ];
+        "1" = [ { class = "firefox"; } ];
         "2" = [ { class = "Xfce4-terminal"; } ];
         "3" = [ { class = "Code"; } ];
         "11" = [ { class = "PrismLauncher"; } ];
