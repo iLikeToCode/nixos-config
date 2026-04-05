@@ -6,12 +6,14 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    winapps.url = "github:winapps-org/winapps";
+    winapps.inputs.nixpkgs.follows = "nixpkgs";
 
     webots.url = "https://github.com/cyberbotics/webots/releases/download/R2025a/webots-R2025a-x86-64.tar.bz2";
     webots.flake = false;
   };
   outputs =
-    { self, nixpkgs, home-manager, flake-utils, nixos-hardware, webots, ... }@attrs:
+    { self, nixpkgs, home-manager, flake-utils, nixos-hardware, winapps, webots, ... }@attrs:
     let
       eachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" ];
 

@@ -3,6 +3,7 @@
   lib,
   pkgs,
   self,
+  winapps,
   ...
 }:
 {
@@ -121,6 +122,8 @@
     virt-viewer
     spotifywm
     kdePackages.dolphin
+    winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps
+    winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps-launcher
   ];
 
   system.stateVersion = "26.05";
