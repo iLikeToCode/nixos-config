@@ -5,6 +5,7 @@
     ./git.nix
     ./nix-channel-watcher.nix
     ../programs/desktop/i3-config.nix
+    ./winapps.nix
   ];
 
   home.file.".background-image" = {
