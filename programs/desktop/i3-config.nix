@@ -74,7 +74,7 @@ in
         "${mod}+shift+d" = "exec --no-startup-id rofi -show window";
         "${mod}+shift+x" = ''
           exec --no-startup-id i3lock \
-            --image $HOME/.background_image
+            --image $HOME/.background-image
         '';
 
         "${mod}+Return" = "exec xfce4-terminal";
@@ -153,7 +153,7 @@ in
       exec --no-startup-id xset dpms 300 300 300
       
       exec --no-startup-id i3lock \
-        --image $HOME/.background_image
+        --image $HOME/.background-image
 
       exec --no-startup-id gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
       exec_always --no-startup-id autorandr --change
