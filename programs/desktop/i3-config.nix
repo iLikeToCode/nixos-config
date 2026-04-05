@@ -156,7 +156,6 @@ in
       exec --no-startup-id nm-applet
       exec --no-startup-id mkdir -p ~/Pictures/Screenshots
       exec --no-startup-id flameshot
-      exec --no-startup-id spotify-tray
 
       exec --no-startup-id i3-msg 'workspace 1'
     '';

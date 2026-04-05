@@ -120,6 +120,7 @@
     btop
     virt-viewer
     spotifywm
+    kdePackages.dolphin
   ];
 
   system.stateVersion = "26.05";

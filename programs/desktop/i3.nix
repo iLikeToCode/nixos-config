@@ -12,7 +12,6 @@
     feh
     gcr
     autorandr
-    spotify-tray
   ];
 
   services.libinput.touchpad.naturalScrolling = true;
