@@ -74,18 +74,7 @@ in
         "${mod}+shift+d" = "exec --no-startup-id rofi -show window";
         "${mod}+shift+x" = ''
           exec --no-startup-id i3lock \
-            --image $HOME/.background_image \
-            --blur 5 \
-            --indicator \
-            --radius 120 \
-            --ring-width 8 \
-            --inside-color=00000000 \
-            --ring-color=ffffff50 \
-            --line-uses-ring \
-            --time-color=ffffffff \
-            --date-color=ffffffff \
-            --keylayout 1 \
-            --ind-pos="x+0:y+0"
+            --image $HOME/.background_image
         '';
 
         "${mod}+Return" = "exec xfce4-terminal";
@@ -162,24 +151,10 @@ in
     extraConfig = ''
       exec --no-startup-id xset s 300 10
       exec --no-startup-id xset dpms 300 300 300
+      
+      exec --no-startup-id i3lock \
+        --image $HOME/.background_image
 
-      # Use xss-lock with i3lock-color
-      exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock \
-        --image $HOME/.background_image \
-        --nofork \
-        --blur 5 \
-        --indicator \
-        --radius 120 \
-        --ring-width 8 \
-        --inside-color=00000000 \
-        --ring-color=ffffff50 \
-        --line-uses-ring \
-        --time-color=ffffffff \
-        --date-color=ffffffff \
-        --keylayout 1 \
-        --ind-pos="x+0:y+0"
-
-      # Start gnome-keyring, autorandr, nm-applet etc.
       exec --no-startup-id gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
       exec_always --no-startup-id autorandr --change
       exec --no-startup-id nm-applet
@@ -187,7 +162,6 @@ in
       exec --no-startup-id flameshot
       exec --no-startup-id spotify-tray
 
-      # Ensure workspace starts on 1
       exec --no-startup-id i3-msg 'workspace 1'
     '';
   };
