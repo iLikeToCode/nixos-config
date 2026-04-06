@@ -109,27 +109,32 @@ in
         "${mod}+Shift+l" = "move down";
         "${mod}+Shift+semicolon" = "move right";
 
-        "${mod}+Control+1" = "workspace 11";
-        "${mod}+Control+2" = "workspace 12";
-        "${mod}+Control+3" = "workspace 13";
-        "${mod}+Control+4" = "workspace 14";
-        "${mod}+Control+5" = "workspace 15";
-        "${mod}+Control+6" = "workspace 16";
-        "${mod}+Control+7" = "workspace 17";
-        "${mod}+Control+8" = "workspace 18";
-        "${mod}+Control+9" = "workspace 19";
-        "${mod}+Control+0" = "workspace 20";
+        "${mod}+Ctrl+Shift+j" = "move workspace to output left";
+        "${mod}+Ctrl+Shift+k" = "move workspace to output up";
+        "${mod}+Ctrl+Shift+l" = "move workspace to output down";
+        "${mod}+Ctrl+Shift+semicolon" = "move workspace to output right";
 
-        "${mod}+Control+Shift+1" = "move container to workspace 11";
-        "${mod}+Control+Shift+2" = "move container to workspace 12";
-        "${mod}+Control+Shift+3" = "move container to workspace 13";
-        "${mod}+Control+Shift+4" = "move container to workspace 14";
-        "${mod}+Control+Shift+5" = "move container to workspace 15";
-        "${mod}+Control+Shift+6" = "move container to workspace 16";
-        "${mod}+Control+Shift+7" = "move container to workspace 17";
-        "${mod}+Control+Shift+8" = "move container to workspace 18";
-        "${mod}+Control+Shift+9" = "move container to workspace 19";
-        "${mod}+Control+Shift+0" = "move container to workspace 20";
+        "${mod}+Ctrl+1" = "workspace 11";
+        "${mod}+Ctrl+2" = "workspace 12";
+        "${mod}+Ctrl+3" = "workspace 13";
+        "${mod}+Ctrl+4" = "workspace 14";
+        "${mod}+Ctrl+5" = "workspace 15";
+        "${mod}+Ctrl+6" = "workspace 16";
+        "${mod}+Ctrl+7" = "workspace 17";
+        "${mod}+Ctrl+8" = "workspace 18";
+        "${mod}+Ctrl+9" = "workspace 19";
+        "${mod}+Ctrl+0" = "workspace 20";
+
+        "${mod}+Ctrl+Shift+1" = "move container to workspace 11";
+        "${mod}+Ctrl+Shift+2" = "move container to workspace 12";
+        "${mod}+Ctrl+Shift+3" = "move container to workspace 13";
+        "${mod}+Ctrl+Shift+4" = "move container to workspace 14";
+        "${mod}+Ctrl+Shift+5" = "move container to workspace 15";
+        "${mod}+Ctrl+Shift+6" = "move container to workspace 16";
+        "${mod}+Ctrl+Shift+7" = "move container to workspace 17";
+        "${mod}+Ctrl+Shift+8" = "move container to workspace 18";
+        "${mod}+Ctrl+Shift+9" = "move container to workspace 19";
+        "${mod}+Ctrl+Shift+0" = "move container to workspace 20";
         
         # Audio
         "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume 0 +5%";
