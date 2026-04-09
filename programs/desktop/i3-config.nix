@@ -63,6 +63,7 @@ in
         "3" = [ { class = "Code"; } ];
         "11" = [ { class = "PrismLauncher"; } ];
         "12" = [ { class = "^Minecraft"; } ];
+        "13" = [ { class = "steam"; } ];
         "17" = [ { class = "Spotify"; } ];
         "18" = [ { class = "Slack"; } ];
         "19" = [ { class = "Element"; } ];
