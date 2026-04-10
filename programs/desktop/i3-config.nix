@@ -64,6 +64,7 @@ in
         "11" = [ { class = "PrismLauncher"; } ];
         "12" = [ { class = "^Minecraft"; } ];
         "13" = [ { class = "steam"; } ];
+        "14" = [ { class = "^steam_app_"; } ];
         "17" = [ { class = "Spotify"; } ];
         "18" = [ { class = "Slack"; } ];
         "19" = [ { class = "Element"; } ];
