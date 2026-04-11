@@ -38,20 +38,15 @@ let
     CODE_REAL="$(dirname "$0")/code-real"
     TARGET="$1"
 
-    # No dir → just run
     if [ -z "$TARGET" ] || [ ! -d "$TARGET" ]; then
       exec "$CODE_REAL" "$@"
     fi
 
-    cd "$TARGET"
-
-    # Flake with devShell
-    if [ -f flake.nix ] && nix develop --command true >/dev/null 2>&1; then
+    if [ -f $TARGET/flake.nix ]; then
       exec nix develop -c "$CODE_REAL" "$TARGET"
     fi
-
-    # Legacy nix-shell
-    if [ -f shell.nix ] || [ -f default.nix ]; then
+    
+    if [ -f $TARGET/shell.nix ] || [ -f $TARGET/default.nix ]; then
       exec nix-shell --run "$CODE_REAL $TARGET"
     fi
 
@@ -127,5 +122,5 @@ runCommand "${wrappedPkgName}-with-extensions-${wrappedPkgVersion}"
     ln -sT "${vscode}/share/applications/${executableName}-url-handler.desktop" "$out/share/applications/${executableName}-url-handler.desktop"
 
     makeWrapper "${vscode}/bin/${executableName}" "$out/bin/code-real" --run "bash ${wrapperScript}" ${extensionsFlag}
-    cp ${nixWrapperScript} $out/bin/code
+    install -Dm755 ${nixWrapperScript} $out/bin/code
   ''
