@@ -57,7 +57,7 @@ let
     fi
 
     exec "$CODE_REAL" "$TARGET" "$@"
-  ''
+  '';
 
   wrapperScript = writeTextFile {
     name = "vscode-wrapper";
