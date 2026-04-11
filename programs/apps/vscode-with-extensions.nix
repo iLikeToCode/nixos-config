@@ -45,8 +45,11 @@ let
 
       # Prefer flakes if present
       if [ -f "$TARGET/flake.nix" ]; then
-        cd "$TARGET"
-        exec nix develop -c code-real "$TARGET"
+        if nix develop -c true >/dev/null 2>&1; then
+          exec nix develop -c code-real "$TARGET"
+        else
+          exec code-real "$TARGET"
+        fi
       fi
 
       # Fallback to classic nix-shell
