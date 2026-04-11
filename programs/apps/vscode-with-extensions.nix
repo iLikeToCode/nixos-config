@@ -30,38 +30,31 @@ let
   
   pythonEnv = import ./python-env.nix { inherit pkgs; };
 
-  nixWrapperScript = writeTextFile {
-    name = "nix-vscode-wrapper";
-    text = ''
-      #!/usr/bin/env bash
-      set -e
+  nixWrapperScript = writeShellScript "nix-vscode-wrapper" ''
+    #!/usr/bin/env bash
+    set -e
 
-      TARGET="$1"
+    TARGET="$1"
 
-      # If no argument or not a directory, just open normally
-      if [ -z "$TARGET" ] || [ ! -d "$TARGET" ]; then
-        exec code-real "$@"
-      fi
-
-      # Prefer flakes if present
-      if [ -f "$TARGET/flake.nix" ]; then
-        if nix develop -c true >/dev/null 2>&1; then
-          exec nix develop -c code-real "$TARGET"
-        else
-          exec code-real "$TARGET"
-        fi
-      fi
-
-      # Fallback to classic nix-shell
-      if [ -f "$TARGET/shell.nix" ] || [ -f "$TARGET/default.nix" ]; then
-        cd "$TARGET"
-        exec nix-shell --run "code-real $TARGET"
-      fi
-
-      # No nix environment, just open normally
+    if [ -z "$TARGET" ] || [ ! -d "$TARGET" ]; then
       exec code-real "$@"
-    '';
-};
+    fi
+
+    if [ -f "$TARGET/flake.nix" ]; then
+      if nix develop -c true >/dev/null 2>&1; then
+        exec nix develop -c code-real "$TARGET"
+      else
+        exec code-real "$TARGET"
+      fi
+    fi
+
+    if [ -f "$TARGET/shell.nix" ] || [ -f "$TARGET/default.nix" ]; then
+      cd "$TARGET"
+      exec nix-shell --run "code-real $TARGET"
+    fi
+
+    exec code-real "$@"
+  '';
 
   wrapperScript = writeTextFile {
     name = "vscode-wrapper";
@@ -132,7 +125,5 @@ runCommand "${wrappedPkgName}-with-extensions-${wrappedPkgVersion}"
     ln -sT "${vscode}/share/applications/${executableName}-url-handler.desktop" "$out/share/applications/${executableName}-url-handler.desktop"
 
     makeWrapper "${vscode}/bin/${executableName}" "$out/bin/code-real" --run "bash ${wrapperScript}" ${extensionsFlag}
-    cp $out/bin/code-real $out/bin/code
-    makeWrapper "${vscode}/bin/${executableName}" "$out/bin/${executableName}" --run "bash ${nixWrapperScript}" ${extensionsFlag}
-
+    cp ${nixWrapperScript} $out/bin/code
   ''
