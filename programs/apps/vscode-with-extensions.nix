@@ -37,21 +37,27 @@ let
 
     CODE_REAL="$(dirname "$0")/code-real"
     TARGET="$1"
+    shift || true
 
+    # No dir → pass everything through
     if [ -z "$TARGET" ] || [ ! -d "$TARGET" ]; then
-      exec "$CODE_REAL" "$@"
+      exec "$CODE_REAL" "$TARGET" "$@"
     fi
 
-    if [ -f $TARGET/flake.nix ]; then
-      exec sh -c "cd $TARGET && nix develop -c $CODE_REAL ."
+    # ── flake ─────────────────────────────
+    if [ -f "$TARGET/flake.nix" ]; then
+      if sh -c "cd '$TARGET' && nix develop --command true" >/dev/null 2>&1; then
+        exec sh -c "cd '$TARGET' && nix develop -c '$CODE_REAL' '$TARGET' '$@'"
+      fi
     fi
 
-    if [ -f $TARGET/shell.nix ] || [ -f $TARGET/default.nix ]; then
-      exec sh -c "cd $TARGET && nix-shell --run '$CODE_REAL .'"
+    # ── legacy shell ──────────────────────
+    if [ -f "$TARGET/shell.nix" ]; then
+      exec sh -c "cd '$TARGET' && nix-shell --run '$CODE_REAL \"$TARGET\" $@'"
     fi
 
-    exec "$CODE_REAL" "$@"
-  '';
+    exec "$CODE_REAL" "$TARGET" "$@"
+  ''
 
   wrapperScript = writeTextFile {
     name = "vscode-wrapper";
