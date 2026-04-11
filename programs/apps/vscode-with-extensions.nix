@@ -43,11 +43,11 @@ let
     fi
 
     if [ -f $TARGET/flake.nix ]; then
-      exec nix develop -c "$CODE_REAL" "$TARGET"
+      exec sh -c "cd $TARGET && nix develop -c $CODE_REAL ."
     fi
-    
+
     if [ -f $TARGET/shell.nix ] || [ -f $TARGET/default.nix ]; then
-      exec nix-shell --run "$CODE_REAL $TARGET"
+      exec sh -c "cd $TARGET && nix-shell --run '$CODE_REAL .'"
     fi
 
     exec "$CODE_REAL" "$@"
