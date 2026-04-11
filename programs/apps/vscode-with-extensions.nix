@@ -35,26 +35,27 @@ let
     #!/usr/bin/env bash
     set -e
 
+    CODE_REAL="$(dirname "$0")/code-real"
     TARGET="$1"
 
+    # No dir → just run
     if [ -z "$TARGET" ] || [ ! -d "$TARGET" ]; then
-      exec code-real "$@"
+      exec "$CODE_REAL" "$@"
     fi
 
-    if [ -f "$TARGET/flake.nix" ]; then
-      if nix develop -c true >/dev/null 2>&1; then
-        exec nix develop -c code-real "$TARGET"
-      else
-        exec code-real "$TARGET"
-      fi
+    cd "$TARGET"
+
+    # Flake with devShell
+    if [ -f flake.nix ] && nix develop --command true >/dev/null 2>&1; then
+      exec nix develop -c "$CODE_REAL" "$TARGET"
     fi
 
-    if [ -f "$TARGET/shell.nix" ] || [ -f "$TARGET/default.nix" ]; then
-      cd "$TARGET"
-      exec nix-shell --run "code-real $TARGET"
+    # Legacy nix-shell
+    if [ -f shell.nix ] || [ -f default.nix ]; then
+      exec nix-shell --run "$CODE_REAL $TARGET"
     fi
 
-    exec code-real "$@"
+    exec "$CODE_REAL" "$@"
   '';
 
   wrapperScript = writeTextFile {
