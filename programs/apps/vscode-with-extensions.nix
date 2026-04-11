@@ -8,6 +8,7 @@
   vscode-utils,
   jq,
   makeWrapper,
+  writeShellScript,
   writeTextFile,
   vscodeExtensions ? [ ],
 }:
