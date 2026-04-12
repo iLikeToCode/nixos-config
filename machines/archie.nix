@@ -128,6 +128,7 @@
     btop
     virt-viewer
     spotifywm
+    libreoffice
     kdePackages.dolphin
     winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps
     winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps-launcher
