@@ -8,6 +8,7 @@
   vscode-utils,
   jq,
   makeWrapper,
+  writeShellScript,
   writeTextFile,
   vscodeExtensions ? [ ],
 }:
@@ -29,6 +30,34 @@ let
   };
   
   pythonEnv = import ./python-env.nix { inherit pkgs; };
+
+  nixWrapperScript = writeShellScript "nix-vscode-wrapper" ''
+    #!/usr/bin/env bash
+    set -e
+
+    CODE_REAL="$(dirname "$0")/code-real"
+    TARGET="$1"
+    shift || true
+
+    # No dir → pass everything through
+    if [ -z "$TARGET" ] || [ ! -d "$TARGET" ]; then
+      exec "$CODE_REAL" "$TARGET" "$@"
+    fi
+
+    # ── flake ─────────────────────────────
+    if [ -f "$TARGET/flake.nix" ]; then
+      if sh -c "cd '$TARGET' && nix develop --command true" >/dev/null 2>&1; then
+        exec sh -c "cd '$TARGET' && nix develop -c '$CODE_REAL' '$TARGET' '$@'"
+      fi
+    fi
+
+    # ── legacy shell ──────────────────────
+    if [ -f "$TARGET/shell.nix" ]; then
+      exec sh -c "cd '$TARGET' && nix-shell --run '$CODE_REAL \"$TARGET\" $@'"
+    fi
+
+    exec "$CODE_REAL" "$TARGET" "$@"
+  '';
 
   wrapperScript = writeTextFile {
     name = "vscode-wrapper";
@@ -98,6 +127,6 @@ runCommand "${wrappedPkgName}-with-extensions-${wrappedPkgVersion}"
     ln -sT "${vscode}/share/applications/${executableName}.desktop" "$out/share/applications/${executableName}.desktop"
     ln -sT "${vscode}/share/applications/${executableName}-url-handler.desktop" "$out/share/applications/${executableName}-url-handler.desktop"
 
-    makeWrapper "${vscode}/bin/${executableName}" "$out/bin/${executableName}" --run "bash ${wrapperScript}" ${extensionsFlag}
-
+    makeWrapper "${vscode}/bin/${executableName}" "$out/bin/code-real" --run "bash ${wrapperScript}" ${extensionsFlag}
+    install -Dm755 ${nixWrapperScript} $out/bin/code
   ''
