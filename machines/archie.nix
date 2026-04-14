@@ -3,7 +3,6 @@
   lib,
   pkgs,
   self,
-  winapps,
   ...
 }:
 {
@@ -130,8 +129,7 @@
     spotifywm
     libreoffice
     kdePackages.dolphin
-    winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps
-    winapps.packages."${pkgs.stdenv.hostPlatform.system}".winapps-launcher
+    pavucontrol
   ];
 
   system.stateVersion = "26.05";
