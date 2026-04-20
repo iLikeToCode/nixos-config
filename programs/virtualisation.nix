@@ -6,8 +6,6 @@
     ];
     programs.virt-manager.enable = true;
 
-    users.users.archie.extraGroups = [ "kvm" ];
-
     networking.bridges = {
         vmbr0.interfaces = [ ];
         vmbr1.interfaces = [ ];
@@ -45,7 +43,7 @@
 
     networking.nat.internalInterfaces = [ "vmbr0" ];
 
-    users.users.archie.extraGroups = [ "docker" "libvirt" ];
+    users.users.archie.extraGroups = [ "docker" "libvirt" "kvm" ];
 
     virtualisation = {
         libvirtd = {
