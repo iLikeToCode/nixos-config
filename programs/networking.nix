@@ -15,4 +15,5 @@
   networking.resolvconf.enable = true;
   networking.firewall.trustedInterfaces = [ "tailscale0" ];
   networking.firewall.checkReversePath = "loose";
+  networking.nftables.enable = true;
 }

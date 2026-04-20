@@ -6,7 +6,7 @@
     ];
     programs.virt-manager.enable = true;
 
-    networking.nftables.enable = true;
+    users.users.archie.extraGroups = [ "kvm" ];
 
     networking.bridges = {
         vmbr0.interfaces = [ ];
