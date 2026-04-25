@@ -129,6 +129,7 @@
     spotifywm
     libreoffice
     kdePackages.dolphin
+    kdePackages.krdc
     pavucontrol
   ];
 
