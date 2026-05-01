@@ -12,7 +12,7 @@
     self.packages.${pkgs.stdenv.hostPlatform.system}.feh
     gcr
     autorandr
-    xfce.xfce4-polkit
+    kdePackages.polkit-kde-agent-1
   ];
 
   services.libinput.touchpad.naturalScrolling = true;
