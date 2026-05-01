@@ -49,7 +49,11 @@
         libvirtd = {
             enable = true;
             allowedBridges = [ "vmbr0" "vmbr1" ];
-            qemu.vhostUserPackages = with pkgs; [ virtiofsd ];
+            qemu = {
+                vhostUserPackages = with pkgs; [ virtiofsd ];
+                swtpm.enable = true;
+                ovmf.packages = [ pkgs.OVMFFull.fd ];
+            };
         };
         spiceUSBRedirection.enable = true;
         docker.enable = true;
