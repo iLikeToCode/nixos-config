@@ -12,6 +12,7 @@
     self.packages.${pkgs.stdenv.hostPlatform.system}.feh
     gcr
     autorandr
+    xfce.xfce4-polkit
   ];
 
   services.libinput.touchpad.naturalScrolling = true;
