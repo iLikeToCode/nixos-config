@@ -1,6 +1,14 @@
 { pkgs, ... }:
 
 pkgs.python313.withPackages (python-pkgs: with python-pkgs; [
+    torch
+    torchvision
+    torchaudio
+    opencv4
+    face-recognition
+    dlib
+
+
     # ── QOL ────────────────────────────────────
     flake8
     rich
@@ -24,10 +32,12 @@ pkgs.python313.withPackages (python-pkgs: with python-pkgs; [
     numpy
     pandas
     scipy
+    scikit-learn
     matplotlib
     seaborn
     tabulate
     sympy
+    statsmodels
 
     # ── Dev / Testing ──────────────────────────
     pytest
