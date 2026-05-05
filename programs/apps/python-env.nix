@@ -4,7 +4,9 @@ pkgs.python313.withPackages (python-pkgs: with python-pkgs; [
     torch
     torchvision
     torchaudio
-    opencv4
+    (opencv4.override {
+        enableGtk3 = true;
+    })
     face-recognition
     dlib
 
