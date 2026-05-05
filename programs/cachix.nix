@@ -11,10 +11,10 @@
   nix = {
     settings = {
       substituters = [
-        "https://nix-cache.archiesbytes.xyz"
+        "https://iliketocode.cachix.org"
       ];
       trusted-public-keys = [
-        "nix-cache.archiesbytes.xyz:1TTuu9TNSBMvC1EspXSnT2kg1Y04TwvfsfmmnJLhWmU="
+        "iliketocode.cachix.org-1:yNcYC972e1mCXFWsQsEsyYh1hPiRNUIeUkOlnBk8xLE="
       ];
     };
   };
