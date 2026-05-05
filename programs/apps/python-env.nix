@@ -1,12 +1,10 @@
 { pkgs, ... }:
 
-pkgs.python313.withPackages (python-pkgs: with python-pkgs; [
+pkgs.python313.withPackages (python-pkgs: with python-pkgs // { opencv4 = pkgs.callPackage ../packages/opencv4.nix }; [
     torch
     torchvision
     torchaudio
-    (opencv4.override {
-        enableGtk3 = true;
-    })
+    opencv4
     face-recognition
     dlib
 
