@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-pkgs.python313.withPackages (python-pkgs: with python-pkgs // { opencv4 = pkgs.callPackage ../packages/opencv4.nix }; [
+pkgs.python313.withPackages (python-pkgs: with python-pkgs // { opencv4 = pkgs.callPackage ../packages/opencv4.nix; }; [
     torch
     torchvision
     torchaudio
