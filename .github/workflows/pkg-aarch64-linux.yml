@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  tests:
+  pkg:
     runs-on: ubuntu-latest-arm
     steps:
     - uses: actions/checkout@v4
@@ -15,4 +15,4 @@ jobs:
       with:
         name: iliketocode
         authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-    - run: nix build .#packages.aarch64-linux --print-build-logs --extra-experimental-features "flakes nix-command"
+    - run: nix flake show --json | jq  '.packages."aarch64-linux"|keys[]'| xargs -I {} nix build .#{} --print-build-logs --extra-experimental-features "flakes nix-command"
