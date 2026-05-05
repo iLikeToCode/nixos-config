@@ -5,7 +5,7 @@ pkgs.python313.withPackages (python-pkgs: with python-pkgs // { opencv4 = pkgs.c
     torchvision
     torchaudio
     opencv4
-    face-recognition
+    facenet-pytoch
     dlib
 
 
