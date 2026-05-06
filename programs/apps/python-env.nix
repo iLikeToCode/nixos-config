@@ -4,7 +4,9 @@ pkgs.python313.withPackages (python-pkgs: with python-pkgs // { opencv4 = pkgs.c
     torch
     torchvision
     torchaudio
-    opencv4
+    (opencv4.override {
+        enableGtk3 = true;
+    })
     facenet-pytorch
     dlib
 
