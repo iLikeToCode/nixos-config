@@ -9,6 +9,7 @@ pkgs.python313.withPackages (python-pkgs: with python-pkgs; [
     })
     facenet-pytorch
     dlib
+    pkgs.piper-tts
 
 
     # ── QOL ────────────────────────────────────
