@@ -131,6 +131,7 @@
     kdePackages.dolphin
     kdePackages.krdc
     pavucontrol
+    piper-tts
   ];
 
   system.stateVersion = "26.05";
