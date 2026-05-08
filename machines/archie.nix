@@ -132,6 +132,7 @@
     kdePackages.krdc
     pavucontrol
     piper-tts
+    qlcplus
   ];
 
   system.stateVersion = "26.05";
