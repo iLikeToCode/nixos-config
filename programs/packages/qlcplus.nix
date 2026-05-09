@@ -25,59 +25,59 @@
 }:
 
 pkgs.stdenv.mkDerivation rec {
-  pname = "qlcplus";
-  version = "5.2.1";
+    pname = "qlcplus";
+    version = "5.2.1";
 
-  src = fetchFromGitHub {
-    owner = "mcallegari";
-    repo = "qlcplus";
-    rev = "QLC+_${version}";
-    sha256 = "sha256-kERLpQPzUQHJvQPWlQc1l1VnDSZlrVxermbx+DOn8Co=";
-  };
+    src = fetchFromGitHub {
+      owner = "mcallegari";
+      repo = "qlcplus";
+      rev = "QLC+_${version}";
+      sha256 = "sha256-kERLpQPzUQHJvQPWlQc1l1VnDSZlrVxermbx+DOn8Co=";
+    };
 
-  nativeBuildInputs = [
-    cmake
-    ninja
-    pkg-config
-    wrapQtAppsHook
-  ];
+    nativeBuildInputs = [
+      cmake
+      ninja
+      pkg-config
+      wrapQtAppsHook
+    ];
 
-  buildInputs = [
-    qtbase
-    qtmultimedia
-    qtscript
-    qtserialport
-    qttools
-    qtwebsockets
+    buildInputs = [
+      qtbase
+      qtmultimedia
+      qtscript
+      qtserialport
+      qttools
+      qtwebsockets
 
-    udev
-    alsa-lib
-    ola
-    libftdi1
-    libusb-compat-0_1
-    libsndfile
-    libmad
-  ];
+      udev
+      alsa-lib
+      ola
+      libftdi1
+      libusb-compat-0_1
+      libsndfile
+      libmad
+    ];
 
     postPatch = ''
-        patchShebangs .
+      patchShebangs .
 
-        # remove broken installroot system entirely
-        sed -i '/set(INSTALLROOT "/usr")/d' variables.cmake
-        sed -i '/INSTALL_ROOT/d' variables.cmake
+      # remove broken installroot system entirely
+      sed -i '/set(INSTALLROOT "\/usr")/d' variables.cmake
+      sed -i '/INSTALL_ROOT/d' variables.cmake
 
-        # fix only udev path
-        sed -i 's|/etc/udev/rules.d|lib/udev/rules.d|' variables.cmake
+      # fix only udev path
+      sed -i 's|/etc/udev/rules.d|lib/udev/rules.d|' variables.cmake
     '';
 
     cmakeFlags = [
     "-DCMAKE_BUILD_TYPE=Release"
     ];
 
-  meta = with lib; {
-    description = "Free and cross-platform DMX lighting control software";
-    homepage = "https://www.qlcplus.org/";
-    license = licenses.asl20;
-    platforms = platforms.linux;
-  };
+    meta = with lib; {
+      description = "Free and cross-platform DMX lighting control software";
+      homepage = "https://www.qlcplus.org/";
+      license = licenses.asl20;
+      platforms = platforms.linux;
+    };
 }
