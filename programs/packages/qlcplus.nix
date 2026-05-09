@@ -62,16 +62,12 @@ pkgs.stdenv.mkDerivation rec {
     postPatch = ''
       patchShebangs .
 
-      # remove broken installroot system entirely
-      sed -i '/set(INSTALLROOT "\/usr")/d' variables.cmake
-      sed -i '/INSTALL_ROOT/d' variables.cmake
-
-      # fix only udev path
+      sed -i 's|set(INSTALLROOT "/usr")|set(INSTALLROOT "")|' variables.cmake
       sed -i 's|/etc/udev/rules.d|lib/udev/rules.d|' variables.cmake
     '';
 
     cmakeFlags = [
-    "-DCMAKE_BUILD_TYPE=Release"
+      "-DCMAKE_BUILD_TYPE=Release"
     ];
 
     meta = with lib; {
