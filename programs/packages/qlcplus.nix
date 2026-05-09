@@ -64,8 +64,8 @@ pkgs.stdenv.mkDerivation rec {
 
       # Don't hardcode /usr
       substituteInPlace variables.cmake \
-        --replace-fail 'set(INSTALLROOT "/usr")' 'set(INSTALLROOT "")' \
-        --replace-fail 'set(UDEVRULESDIR "/etc/udev/rules.d")' 'set(UDEVRULESDIR "lib/udev/rules.d")'
+        --replace-fail 'set(INSTALLROOT "/usr")' 'set(INSTALLROOT "$out")' \
+        --replace-fail 'set(UDEVRULESDIR "/etc/udev/rules.d")' 'set(UDEVRULESDIR "$out/lib/udev/rules.d")'
     '';
 
     cmakeFlags = [
