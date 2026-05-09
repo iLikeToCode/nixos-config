@@ -62,8 +62,10 @@ pkgs.stdenv.mkDerivation rec {
     postPatch = ''
       patchShebangs .
 
-      sed -i 's|set(INSTALLROOT "/usr")|set(INSTALLROOT "")|' variables.cmake
-      sed -i 's|/etc/udev/rules.d|lib/udev/rules.d|' variables.cmake
+      # Don't hardcode /usr
+      substituteInPlace variables.cmake \
+        --replace-fail 'set(INSTALLROOT "/usr")' 'set(INSTALLROOT "")' \
+        --replace-fail 'set(UDEVRULESDIR "/etc/udev/rules.d")' 'set(UDEVRULESDIR "lib/udev/rules.d")'
     '';
 
     cmakeFlags = [
