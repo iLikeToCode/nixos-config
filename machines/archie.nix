@@ -79,7 +79,7 @@
   users.users.archie = {
     description = "Archie Hurst";
     isNormalUser = true;
-    extraGroups = [ "dialout" "networkmanager" "wheel" ];
+    extraGroups = [ "dialout" "networkmanager" "wheel" "disk" ];
   };
 
   hardware.bluetooth.enable = true;
