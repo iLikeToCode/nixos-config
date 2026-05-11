@@ -132,7 +132,8 @@
     kdePackages.krdc
     pavucontrol
     piper-tts
-    qlcplus
+    self.packages.x86_64-linux.qlcplus
+    whatsapp-electron
   ];
 
   system.stateVersion = "26.05";
