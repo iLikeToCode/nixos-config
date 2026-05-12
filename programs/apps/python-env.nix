@@ -9,7 +9,7 @@ pkgs.python313.withPackages (python-pkgs: with python-pkgs; [
     })
     facenet-pytorch
     dlib
-
+    insightface
 
     # ── QOL ────────────────────────────────────
     flake8
