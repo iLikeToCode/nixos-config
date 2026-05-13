@@ -14,7 +14,7 @@ pkgs.python313.withPackages (python-pkgs: with python-pkgs; [
     dlib
     (insightface.override {
         opencv4 = opencv4Full-gtk;
-    });
+    })
 
     # ── QOL ────────────────────────────────────
     flake8

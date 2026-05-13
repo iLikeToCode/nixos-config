@@ -30,9 +30,4 @@ let
       files // subdirs;
 in
 # Start recursion with empty prefix
-readPackages "./programs/packages" "" // {
-  mongodb-compass =
-    if pkgs.stdenv.hostPlatform.isAarch64
-    then pkgs.hello
-    else pkgs.callPackage ./programs/packages/mongodb-compass.nix {};
-}
+readPackages "./programs/packages" ""
