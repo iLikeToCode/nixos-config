@@ -10,7 +10,7 @@
   outputs =
     { self, nixpkgs, home-manager, flake-utils, nixos-hardware, ... }@attrs:
     let
-      eachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" "aarch64-linux" ];
+      eachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
 
       nixosConfigsForSystem = system:
         nixpkgs.lib.mapAttrs
