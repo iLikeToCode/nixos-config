@@ -15,7 +15,7 @@ let
     propagatedBuildInputs =
       builtins.filter
         (p: (p.pname or "") != "opencv-python")
-        old.propagatedBuildInputs
+        old.dependencies
       ++ [ opencv-python ];
   });
 
