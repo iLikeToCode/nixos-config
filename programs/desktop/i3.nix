@@ -13,6 +13,7 @@
     gcr
     autorandr
     kdePackages.polkit-kde-agent-1
+    xrandr.xfce4-terminal
   ];
 
   services.libinput.touchpad.naturalScrolling = true;
@@ -54,7 +55,6 @@
         i3blocks
         self.packages.${pkgs.stdenv.hostPlatform.system}.rofi
         xss-lock
-        xfce4-terminal
         brightnessctl
         flameshot
         kdePackages.kstatusnotifieritem
