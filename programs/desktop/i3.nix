@@ -13,7 +13,8 @@
     gcr
     autorandr
     kdePackages.polkit-kde-agent-1
-    xrandr.xfce4-terminal
+    xrandr
+    xfce.xfce4-terminal
   ];
 
   services.libinput.touchpad.naturalScrolling = true;
