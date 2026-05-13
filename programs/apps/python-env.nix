@@ -1,66 +1,81 @@
 { pkgs, ... }:
 
-pkgs.python313.withPackages (python-pkgs: with python-pkgs; [
-    torch
-    torchvision
-    torchaudio
-    (python-pkgs.opencv4.override {
-        enableGtk3 = true;
-    })
-    facenet-pytorch
-    dlib
-    insightface
+let
+  py = pkgs.python313Packages;
 
-    # ── QOL ────────────────────────────────────
-    flake8
-    rich
-    typer
-    click
-    loguru
-    python-dotenv
-    tqdm
-    humanize
-    attrs
-    pydantic
+  opencv = py.opencv4.override {
+    enableGtk3 = true;
+  };
 
-    # ── HTTP / Web ─────────────────────────────
-    requests
-    httpx
-    aiohttp
-    beautifulsoup4
-    lxml
+  opencv-python = py.opencv-python.override {
+    opencv4 = opencv;
+  };
 
-    # ── Data / Math ────────────────────────────
-    numpy
-    pandas
-    scipy
-    scikit-learn
-    matplotlib
-    seaborn
-    tabulate
-    sympy
-    statsmodels
+  insightface = py.insightface.overridePythonAttrs (old: {
+    propagatedBuildInputs =
+      builtins.filter
+        (p: (p.pname or "") != "opencv-python")
+        old.propagatedBuildInputs
+      ++ [ opencv-python ];
+  });
 
-    # ── Dev / Testing ──────────────────────────
-    pytest
-    pytest-cov
-    hypothesis
-    black
-    ruff
-    mypy
-    tox
+in
 
-    # ── Serialization / Formats ────────────────
-    pyyaml
-    tomli
-    toml
-    orjson
-    msgpack
-    jsonschema
-    openpyxl
-    pillow
+pkgs.python313.withPackages (ps: with ps; [
+  torch
+  torchvision
+  torchaudio
 
-    # ── System / Utils ─────────────────────────
-    psutil
-    watchdog
+  opencv
+
+  facenet-pytorch
+  dlib
+  insightface
+
+  flake8
+  rich
+  typer
+  click
+  loguru
+  python-dotenv
+  tqdm
+  humanize
+  attrs
+  pydantic
+
+  requests
+  httpx
+  aiohttp
+  beautifulsoup4
+  lxml
+
+  numpy
+  pandas
+  scipy
+  scikit-learn
+  matplotlib
+  seaborn
+  tabulate
+  sympy
+  statsmodels
+
+  pytest
+  pytest-cov
+  hypothesis
+  black
+  ruff
+  mypy
+  tox
+
+  pyyaml
+  tomli
+  toml
+  orjson
+  msgpack
+  jsonschema
+  openpyxl
+  pillow
+
+  psutil
+  watchdog
 ])
