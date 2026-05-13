@@ -1,20 +1,15 @@
 { pkgs, ... }:
 
-let
-    opencv4Full-gtk = pkgs.python313Packages.opencv4Full.override {
-        enableGtk3 = true;
-    };
-in
 pkgs.python313.withPackages (python-pkgs: with python-pkgs; [
     torch
     torchvision
     torchaudio
-    opencv4Full-gtk
+    (python-pkgs.opencv4.override {
+        enableGtk3 = true;
+    })
     facenet-pytorch
     dlib
-    (insightface.override {
-        opencv4 = opencv4Full-gtk;
-    })
+    insightface
 
     # ── QOL ────────────────────────────────────
     flake8
