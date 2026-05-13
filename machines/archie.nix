@@ -111,7 +111,7 @@
     vim
     wget
     bitwarden-desktop
-    proton-vpn
+    protonvpn-gui
     freeplane
     blender
     element-desktop
