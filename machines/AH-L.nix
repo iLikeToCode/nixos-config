@@ -2,7 +2,6 @@
 {
   imports = [
     ./archie.nix
-    ../programs/apps/discord.nix
     ../programs/desktop/i3.nix
   ];
 
