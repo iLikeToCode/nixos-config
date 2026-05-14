@@ -10,11 +10,9 @@ let
 
     overlays = [
       (final: prev: {
-        python313Packages = prev.python313Packages.overrideScope (pyFinal: pyPrev: {
-          opencv4 = pyPrev.opencv4.override {
-            enableGtk3 = true;
-          };
-        });
+        opencv = prev.opencv.override {
+          enableGtk3 = true;
+        };
       })
     ];
   };
