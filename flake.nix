@@ -110,14 +110,19 @@
       );
 
       packages = eachSystem (system:
-        import ./. {
+        let
           pkgs = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
           };
+        in
+        import ./. {
+          inherit pkgs;
           lib = nixpkgs.lib;
           flat = true;
           inherit attrs;
+        } // {
+          python-env = pkgs.callPackage ./programs/apps/python-env.nix {};
         }
       );
 

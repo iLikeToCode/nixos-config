@@ -1,23 +1,23 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  ...
+}:
 
 let
-  py = pkgs.python313Packages;
+  pkgs' = import pkgs.path {
+    inherit (pkgs) system;
+    config.allowUnfree = true;
 
-  opencv = py.opencv4.override {
-    enableGtk3 = true;
+    overlays = [
+      (final: prev: {
+        python313Packages = prev.python313Packages.overrideScope (pyFinal: pyPrev: {
+          opencv4 = pyPrev.opencv4.override {
+            enableGtk3 = true;
+          };
+        });
+      })
+    ];
   };
-
-  opencv-python = py.opencv-python.override {
-    opencv4 = opencv;
-  };
-
-  insightface = py.insightface.overridePythonAttrs (old: {
-    propagatedBuildInputs =
-      builtins.filter
-        (p: (p.pname or "") != "opencv-python")
-        old.dependencies
-      ++ [ opencv-python ];
-  });
 
 in
 
@@ -26,8 +26,7 @@ pkgs.python313.withPackages (ps: with ps; [
   torchvision
   torchaudio
 
-  opencv
-
+  opencv4
   facenet-pytorch
   dlib
   insightface
