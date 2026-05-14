@@ -6,7 +6,6 @@
 let
   pkgs' = import pkgs.path {
     system = pkgs.stdenv.hostPlatform.system;
-    inherit (pkgs) system;
     config.allowUnfree = true;
 
     overlays = [
