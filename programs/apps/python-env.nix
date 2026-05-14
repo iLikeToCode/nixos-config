@@ -5,6 +5,7 @@
 
 let
   pkgs' = import pkgs.path {
+    system = pkgs.stdenv.hostPlatform.system;
     inherit (pkgs) system;
     config.allowUnfree = true;
 
@@ -21,7 +22,7 @@ let
 
 in
 
-pkgs.python313.withPackages (ps: with ps; [
+pkgs'.python313.withPackages (ps: with ps; [
   torch
   torchvision
   torchaudio
