@@ -29,6 +29,8 @@ pkgs'.python313.withPackages (ps: with ps; [
   dlib
   insightface
 
+  pygame
+
   flake8
   rich
   typer
