@@ -132,7 +132,8 @@
     kdePackages.krdc
     pavucontrol
     piper-tts
-    self.packages.x86_64-linux.qlcplus
+    #self.packages.x86_64-linux.qlcplus
+    qlcplus
     whatsapp-electron
   ];
 
