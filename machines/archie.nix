@@ -137,5 +137,9 @@
     whatsapp-electron
   ];
 
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTR{idProduct}=="6001", MODE="0666"
+  '';
+
   system.stateVersion = "26.05";
 }
