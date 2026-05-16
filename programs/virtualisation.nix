@@ -23,6 +23,7 @@
         enable = true;
 
         settings = {
+            port = 0;
             interface = [ "vmbr0" ];
 
             dhcp-range = [
