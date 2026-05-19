@@ -132,11 +132,11 @@
     kdePackages.krdc
     pavucontrol
     piper-tts
-    #self.packages.x86_64-linux.qlcplus
     qlcplus
     whatsapp-electron
     usbutils
     pciutils
+    self.packages.x86_64-linux.admc
   ];
 
   services.udev.extraRules = ''
