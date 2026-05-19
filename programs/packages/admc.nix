@@ -1,19 +1,22 @@
 { pkgs, lib, ... }:
-pkgs.stdenv.mkDerivation {
-  name = "admc";
+
+pkgs.stdenv.mkDerivation rec {
+  pname = "admc";
+  version = "0.23.2-alt1";
 
   src = pkgs.fetchFromGitHub {
     owner = "altlinux";
     repo = "admc";
-    rev = "0.23.2-alt1";
+    rev = version;
     hash = "sha256-Z789YIgi94qe9+iezBF4N8Mx2xEWadwZETS/R8SsgHo=";
   };
 
   nativeBuildInputs = with pkgs; [
     cmake
     ninja
-    qt6.wrapQtAppsHook
     pkg-config
+    qt6.wrapQtAppsHook
+    copyDesktopItems
   ];
 
   buildInputs = with pkgs; [
@@ -37,4 +40,30 @@ pkgs.stdenv.mkDerivation {
     substituteInPlace src/admc/main.cpp \
       --replace-fail 'qWarning(e.what());' 'qWarning("%s", e.what());'
   '';
+
+  desktopItems = [
+    (pkgs.makeDesktopItem {
+      name = "admc";
+      desktopName = "ADMC";
+      comment = "Active Directory Management Center";
+      exec = "admc";
+      icon = "admc";
+      terminal = false;
+      categories = [ "System" "Network" ];
+    })
+  ];
+
+  postInstall = ''
+    mkdir -p $out/share/pixmaps
+
+    # adjust if the icon path/name differs
+    cp resources/admc.png $out/share/pixmaps/admc.png
+  '';
+
+  meta = with lib; {
+    description = "ADMC from ALT Linux";
+    homepage = "https://github.com/altlinux/admc";
+    license = licenses.gpl3Plus;
+    platforms = platforms.linux;
+  };
 }
