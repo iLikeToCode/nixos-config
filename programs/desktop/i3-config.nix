@@ -164,7 +164,7 @@ in
       exec --no-startup-id nm-applet
       exec --no-startup-id mkdir -p ~/Pictures/Screenshots
       exec --no-startup-id flameshot
-      exec --no-startup-id /run/current-system/sw/libexec/polkit-kde-authentication-agent-1
+      exec --no-startup-id ${pkgs.kdePackages.polkit-kde-agent-1}/libexec/polkit-kde-authentication-agent-1
 
       exec --no-startup-id i3-msg 'workspace 1'
     '';
