@@ -53,13 +53,6 @@ pkgs.stdenv.mkDerivation rec {
     })
   ];
 
-  postInstall = ''
-    mkdir -p $out/share/pixmaps
-
-    # adjust if the icon path/name differs
-    cp resources/admc.png $out/share/pixmaps/admc.png
-  '';
-
   meta = with lib; {
     description = "ADMC from ALT Linux";
     homepage = "https://github.com/altlinux/admc";
