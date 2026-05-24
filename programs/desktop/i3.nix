@@ -66,7 +66,9 @@
 
   services.xserver.displayManager.lightdm.enable = true;
   
-  location.provider = "geoclue2";
+  location.provider = "manual";
+  location.latitude = 54;
+  location.longitude = -3;
   services.redshift = {
     enable = true;
     brightness = {
