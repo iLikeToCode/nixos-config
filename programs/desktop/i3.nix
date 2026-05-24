@@ -67,8 +67,8 @@
   services.xserver.displayManager.lightdm.enable = true;
   
   location.provider = "manual";
-  location.latitude = 54;
-  location.longitude = -3;
+  location.latitude = 54.0;
+  location.longitude = -3.0;
   services.redshift = {
     enable = true;
     brightness = {
