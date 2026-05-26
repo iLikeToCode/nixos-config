@@ -26,11 +26,15 @@
           specialArgs = attrs;
           modules = [
             ./machines/AH-W.nix
-            home-manager.nixosModules.home-manager
-            {
+            home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = false;
-              home-manager.users.archie = ./home-manager/archie.nix;
+              home-manager.users.archie = { pkgs, lib, config, osConfig, ... }: {
+                imports = [
+                  ./home-manager/archie.nix
+                  ./programs/desktop/i3-config.nix
+                ];
+              };
             }
           ];
         };
@@ -40,37 +44,15 @@
           modules = [
             nixos-hardware.nixosModules.dell-latitude-5490
             ./machines/AH-L.nix
-            home-manager.nixosModules.home-manager
-            {
+            home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = false;
-              home-manager.users.archie = ./home-manager/archie.nix;
-            }
-          ];
-        };
-        ah-hpl = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = attrs;
-          modules = [
-            ./machines/AH-HPL.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = false;
-              home-manager.users.archie = ./home-manager/archie.nix;
-            }
-          ];
-        };
-        olp-ml04 = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          specialArgs = attrs;
-          modules = [
-            ./machines/OLP-ML04.nix
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = false;
-              home-manager.users.archie = ./home-manager/archie.nix;
+              home-manager.users.archie = { pkgs, lib, config, osConfig, ... }: {
+                imports = [
+                  ./home-manager/archie.nix
+                  ./programs/desktop/i3-config.nix
+                ];
+              };
             }
           ];
         };

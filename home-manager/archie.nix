@@ -1,11 +1,8 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
     ./git.nix
-    ./nix-channel-watcher.nix
-    ../programs/desktop/i3-config.nix
-    ./winapps.nix
   ];
 
   home.file.".background-image" = {
