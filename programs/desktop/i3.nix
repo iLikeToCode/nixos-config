@@ -65,9 +65,9 @@
   services.displayManager.defaultSession = "none+i3";
 
   services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.displayManager.setupCommands = ''
-    ${pkgs.autorandr}/bin/autorandr --load desktop
-  '';
+  #services.xserver.displayManager.setupCommands = ''
+   # ${pkgs.autorandr}/bin/autorandr --load desktop
+  #'';
   
   location.provider = "manual";
   location.latitude = 54.0;
