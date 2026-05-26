@@ -1,4 +1,4 @@
 { pkgs, ... }:
-pkgs.python313Packages.opencv4Full.override {
+pkgs.opencv.override {
     enableGtk3 = true;
 }
