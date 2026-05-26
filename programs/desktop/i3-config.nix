@@ -72,10 +72,10 @@ in
       };
       workspaceOutputAssign =
         lib.optionals (osConfig.networking.hostName == "AH-W") [
-          { workspace = "3"; output = "DP-2"; }
-          { workspace = "11"; output = "DP-2"; }
-          { workspace = "12"; output = "DP-2"; }
-          { workspace = "1"; output = "DP-1"; }
+          { workspace = "3"; output = "DP-1"; }
+          { workspace = "11"; output = "DP-1"; }
+          { workspace = "12"; output = "DP-1"; }
+          { workspace = "1"; output = "DP-2"; }
           { workspace = "10"; output = "HDMI-1"; }
         ];
       keybindings = lib.mkOptionDefault {
