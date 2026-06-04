@@ -34,7 +34,6 @@
             dhcp-option = [
                 "interface:vmbr0,option:router,192.168.10.1"
                 "interface:vmbr0,option:dns-server,1.1.1.1"
-                "interface:vmbr1,option:router"  # empty = no gateway
             ];
         };
     };
