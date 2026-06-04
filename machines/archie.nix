@@ -137,6 +137,7 @@
     usbutils
     pciutils
     self.packages.x86_64-linux.admc
+    netflix
   ];
 
   services.udev.extraRules = ''
