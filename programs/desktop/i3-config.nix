@@ -113,6 +113,8 @@ in
         "${mod}+l" = "focus down";
         "${mod}+semicolon" = "focus right";
 
+        "${mod}+Shift+y" = "fullscreen disable; floating enable; resize set 422 240; sticky enable";
+
         # Move
         "${mod}+Shift+j" = "move left";
         "${mod}+Shift+k" = "move up";
