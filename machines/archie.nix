@@ -112,7 +112,6 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
-    bitwarden-desktop
     protonvpn-gui
     freeplane
     blender
