@@ -112,7 +112,7 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
-    protonvpn-gui
+    proton-vpn
     freeplane
     blender
     element-desktop
