@@ -143,6 +143,7 @@
     codex
     ollama
     claude-code
+    opencode
   ];
 
   services.udev.extraRules = ''
