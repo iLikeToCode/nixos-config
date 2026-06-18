@@ -141,6 +141,7 @@
     teams-for-linux
     p3x-onenote
     codex
+    ollama
   ];
 
   services.udev.extraRules = ''
