@@ -1,14 +1,15 @@
 {
   description = "iLikeToCode's NixOS config";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-    home-manager.url = "github:nix-community/home-manager/release-25.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+    home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     flake-utils.url = "github:numtide/flake-utils";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    codex-cli-nix.url = "github:sadjow/codex-cli-nix";
   };
   outputs =
-    { self, nixpkgs, home-manager, flake-utils, nixos-hardware, ... }@attrs:
+    { self, nixpkgs, home-manager, flake-utils, nixos-hardware, codex-cli-nix, ... }@attrs:
     let
       eachSystem = nixpkgs.lib.genAttrs [ "x86_64-linux" ];
 

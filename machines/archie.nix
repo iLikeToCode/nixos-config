@@ -3,6 +3,7 @@
   lib,
   pkgs,
   self,
+  codex-cli-nix,
   ...
 }:
 {
@@ -18,6 +19,7 @@
     ../programs/networking.nix
     ../programs/apps/flatpak.nix
     ../programs/cachix.nix
+    ../programs/apps/codex.nix
   ];
 
   services.logind.settings.Login.HandlePowerKey = "hibernate";
@@ -140,7 +142,6 @@
     netflix
     teams-for-linux
     p3x-onenote
-    codex
     ollama
     claude-code
     opencode
