@@ -1,4 +1,4 @@
-{ codex-nix-cli, pkgs, ... }:
+{ codex-cli-nix, pkgs, ... }:
 {
     environment.systemPackages = [
         codex-cli-nix.packages.${pkgs.stdenv.hostPlatform.system}.default
