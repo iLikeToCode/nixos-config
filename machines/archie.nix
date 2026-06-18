@@ -140,6 +140,7 @@
     netflix
     teams-for-linux
     p3x-onenote
+    codex
   ];
 
   services.udev.extraRules = ''
