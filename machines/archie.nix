@@ -142,6 +142,7 @@
     p3x-onenote
     codex
     ollama
+    claude-code
   ];
 
   services.udev.extraRules = ''
