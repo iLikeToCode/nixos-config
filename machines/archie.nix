@@ -137,7 +137,6 @@
     whatsapp-electron
     usbutils
     pciutils
-    self.packages.x86_64-linux.admc
     netflix
     teams-for-linux
     p3x-onenote
