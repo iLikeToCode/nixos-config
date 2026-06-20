@@ -143,6 +143,7 @@
     ollama
     claude-code
     opencode
+    ripgrep
   ];
 
   services.udev.extraRules = ''
