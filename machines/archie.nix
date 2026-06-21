@@ -145,6 +145,7 @@
     opencode
     ripgrep
     openscad
+    seahorse
   ];
 
   services.udev.extraRules = ''
