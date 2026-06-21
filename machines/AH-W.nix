@@ -20,11 +20,6 @@
   systemd.targets.hibernate.enable = false;
   systemd.targets.hybrid-sleep.enable = false;
 
-  environment.systemPackages = with pkgs; [
-    #self.packages.x86_64-linux.webots
-    openscad
-  ];
-
   boot.kernelModules = [ "sg" ];
 
   services.autorandr = {

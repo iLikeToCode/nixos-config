@@ -144,6 +144,7 @@
     claude-code
     opencode
     ripgrep
+    openscad
   ];
 
   services.udev.extraRules = ''
