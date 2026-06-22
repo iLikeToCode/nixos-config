@@ -61,20 +61,16 @@ in
         "1" = [ { class = "firefox"; } ];
         "2" = [ { class = "Xfce4-terminal"; } ];
         "3" = [ { class = "Code"; } ];
-        "11" = [ { class = "PrismLauncher"; } ];
-        "12" = [ { class = "^Minecraft"; } ];
-        "13" = [ { class = "steam"; } ];
-        "14" = [ { class = "^steam_app_"; } ];
+        "11" = [ { class = "PrismLauncher"; class = "^Minecraft"; } ];
         "17" = [ { class = "Spotify"; } ];
         "18" = [ { class = "Slack"; } ];
-        "19" = [ { class = "Element"; } ];
+        "19" = [ { class = "element"; } ];
         "20" = [ { class = "discord"; } ];
       };
       workspaceOutputAssign =
         lib.optionals (osConfig.networking.hostName == "AH-W") [
           { workspace = "3"; output = "DP-1"; }
           { workspace = "11"; output = "DP-1"; }
-          { workspace = "12"; output = "DP-1"; }
           { workspace = "1"; output = "DP-2"; }
           { workspace = "10"; output = "HDMI-1"; }
         ];
