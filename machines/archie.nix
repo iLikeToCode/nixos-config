@@ -146,6 +146,7 @@
     ripgrep
     openscad
     seahorse
+    prismlauncher
   ];
 
   services.udev.extraRules = ''
