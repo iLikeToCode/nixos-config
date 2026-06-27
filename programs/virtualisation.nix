@@ -25,6 +25,14 @@
             enable = true;
         };
         preseed = {
+            networks = [
+                {
+                    type = "bridge";
+                    config = {
+                        "bridge.external_interfaces" = "vmbr0";
+                    };
+                };
+            ];
             profiles = [
                 {
                     devices = {
