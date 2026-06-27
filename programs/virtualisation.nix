@@ -19,6 +19,43 @@
         ipv4.addresses = [{ address = "192.168.20.1"; prefixLength = 24; }];
     };
 
+    virtualisation.incus = {
+        enable = true;
+        ui = {
+            enable = true;
+        };
+        preseed = {
+            profiles = [
+                {
+                    devices = {
+                        eth0 = {
+                            name = "eth0";
+                            network = "vmbr0";
+                            type = "nic";
+                        };
+                        root = {
+                            path = "/";
+                            pool = "default";
+                            size = "50GiB";
+                            type = "disk";
+                        };
+                    };
+                    name = "default";
+                }
+            ];
+            storage_pools = [
+                {
+                    config = {
+                        source = "/var/lib/incus/storage-pools/default";
+                    };
+                    driver = "dir";
+                    name = "default";
+                }
+            ];
+
+        };
+    };
+
     services.dnsmasq = {
         enable = true;
 
