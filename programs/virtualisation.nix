@@ -31,7 +31,7 @@
                     config = {
                         "bridge.external_interfaces" = "vmbr0";
                     };
-                };
+                }
             ];
             profiles = [
                 {
