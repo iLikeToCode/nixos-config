@@ -147,6 +147,8 @@
     openscad
     seahorse
     prismlauncher
+    kicad
+    kicadAddons.kikit
   ];
 
   services.udev.extraRules = ''
