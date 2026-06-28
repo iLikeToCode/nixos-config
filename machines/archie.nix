@@ -149,6 +149,7 @@
     prismlauncher
     kicad
     kicadAddons.kikit
+    ngspice
   ];
 
   services.udev.extraRules = ''
