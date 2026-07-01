@@ -61,7 +61,8 @@ in
         "1" = [ { class = "firefox"; } ];
         "2" = [ { class = "Xfce4-terminal"; } ];
         "3" = [ { class = "Code"; } ];
-        "11" = [ { class = "PrismLauncher"; } { class = "^Minecraft"; } ];
+        "11" = [ { class = "PrismLauncher"; } ];
+        "12" = [ { class = "^Minecraft"; } ];
         "17" = [ { class = "Spotify"; } ];
         "18" = [ { class = "Slack"; } ];
         "19" = [ { class = "element"; } ];
