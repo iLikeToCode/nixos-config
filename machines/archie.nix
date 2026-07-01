@@ -150,6 +150,7 @@
     kicad
     kicadAddons.kikit
     ngspice
+    udiskie
   ];
 
   services.udisks2.enable = true;

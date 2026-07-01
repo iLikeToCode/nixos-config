@@ -17,6 +17,9 @@
     xfce4-terminal
   ];
 
+  xdg.mime.enable = true;
+  xdg.mimeApps.enable = true;
+
   services.libinput.touchpad.naturalScrolling = true;
 
   services.udev.extraRules = ''
