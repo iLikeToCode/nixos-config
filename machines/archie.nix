@@ -129,7 +129,6 @@
     virt-viewer
     spotifywm
     libreoffice
-    kdePackages.dolphin
     kdePackages.krdc
     pavucontrol
     piper-tts
@@ -151,6 +150,7 @@
     kicadAddons.kikit
     ngspice
     udiskie
+    caja
   ];
 
   services.udisks2.enable = true;
