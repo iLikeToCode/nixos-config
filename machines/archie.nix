@@ -150,7 +150,7 @@
     kicadAddons.kikit
     ngspice
     udiskie
-    caja
+    thunar
   ];
 
   services.udisks2.enable = true;
