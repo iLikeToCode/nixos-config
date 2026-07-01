@@ -18,4 +18,7 @@
   home.username = "archie";
   home.homeDirectory = "/home/archie";
   home.stateVersion = "25.11";
+
+
+  xdg.mimeApps.enable = true;
 }
