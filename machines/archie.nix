@@ -81,7 +81,7 @@
   users.users.archie = {
     description = "Archie Hurst";
     isNormalUser = true;
-    extraGroups = [ "dialout" "networkmanager" "wheel" "disk" ];
+    extraGroups = [ "dialout" "networkmanager" "wheel" "disk" "storage" ];
   };
 
   hardware.bluetooth.enable = true;
@@ -151,6 +151,8 @@
     kicadAddons.kikit
     ngspice
   ];
+
+  services.udisks2.enable = true;
 
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTR{idProduct}=="6001", MODE="0666"
