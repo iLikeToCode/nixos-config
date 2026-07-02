@@ -151,6 +151,14 @@
     ngspice
     udiskie
     thunar
+    jetbrains.rider
+    jetbrains.idea-oss
+    jdk21
+    jetbrains.webstorm
+    jetbrains.rust-rover
+    jetbrains.pycharm-oss
+    jetbrains.goland
+    jetbrains-toolbox
   ];
 
   services.udisks2.enable = true;
