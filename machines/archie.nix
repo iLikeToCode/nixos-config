@@ -152,11 +152,11 @@
     udiskie
     thunar
     jetbrains.rider
-    jetbrains.idea-oss
+    jetbrains.idea
     jdk21
     jetbrains.webstorm
     jetbrains.rust-rover
-    jetbrains.pycharm-oss
+    jetbrains.pycharm
     jetbrains.goland
     jetbrains-toolbox
   ];
