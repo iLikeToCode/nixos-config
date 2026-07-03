@@ -154,6 +154,7 @@
     jetbrains.rider
     jetbrains.idea
     jdk21
+    jetbrains.jdk-21
     gradle
     jetbrains.webstorm
     jetbrains.rust-rover
