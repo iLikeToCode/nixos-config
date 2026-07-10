@@ -69,7 +69,7 @@
 
         settings = {
             port = 0;
-            interface = [ "vmbr0" ];
+            interface = [ "vmbr0" "vmbr1" ];
 
             dhcp-range = [
                 "vmbr0,192.168.10.10,192.168.10.200,12h"
