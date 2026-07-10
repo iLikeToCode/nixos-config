@@ -161,7 +161,9 @@
     jetbrains.pycharm
     jetbrains.goland
     jetbrains-toolbox
-    platformio
+    arduino
+    arduino-cli
+    arduino-ide
   ];
 
   services.udisks2.enable = true;
@@ -169,11 +171,6 @@
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTR{idProduct}=="6001", MODE="0666"
   '';
-
-  services.udev.packages = with pkgs; [ 
-    platformio-core.udev
-    openocd
-  ];
 
   system.stateVersion = "26.05";
 }
