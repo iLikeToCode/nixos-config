@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
-    ((pkgs.callPackage ./vscode-with-extensions.nix {}).override {
+    ((pkgs.callPackage ./vscode-pkg.nix {}).override {
       vscode = pkgs.vscode;
       vscodeExtensions = with pkgs.vscode-extensions; [
         golang.go
@@ -11,6 +11,7 @@
         editorconfig.editorconfig
         christian-kohler.npm-intellisense
         astro-build.astro-vscode
+        platformio.platformio-ide
 
         rust-lang.rust-analyzer
         
