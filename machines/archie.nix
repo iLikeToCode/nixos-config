@@ -161,10 +161,7 @@
     jetbrains.pycharm
     jetbrains.goland
     jetbrains-toolbox
-    arduino-ota
-    arduino-cli
-    arduino-ide
-    arduino-mk
+    arduino
   ];
 
   services.udisks2.enable = true;
