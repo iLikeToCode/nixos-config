@@ -11,7 +11,6 @@
         editorconfig.editorconfig
         christian-kohler.npm-intellisense
         astro-build.astro-vscode
-        platformio.platformio-ide
 
         rust-lang.rust-analyzer
         
