@@ -161,6 +161,7 @@
     jetbrains.pycharm
     jetbrains.goland
     jetbrains-toolbox
+    dotnet-sdk
     arduino-ide
     arduino-cli
   ];
