@@ -165,7 +165,15 @@
     dotnet-sdk_9
     arduino-ide
     arduino-cli
+    libimobiledevice
+    idevicerestore
+    ifuse
   ];
+
+  services.usbmuxd = {
+    enable = true;
+    package = pkgs.usbmuxd2;
+  };
 
   services.udisks2.enable = true;
 
