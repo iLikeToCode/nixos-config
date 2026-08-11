@@ -5,6 +5,8 @@
         qemu
     ];
 
+    networking.firewall.allowedUDPPorts = [ 67 68 ];
+
     users.users.archie.extraGroups = [ "incus-admin" "docker" ];
 
     virtualisation = {
