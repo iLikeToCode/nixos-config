@@ -5,7 +5,7 @@
         qemu
     ];
 
-    networking.firewall.allowedUDPPorts = [ 67 68 ];
+    networking.firewall.allowedUDPPorts = [ 53 67 68 ];
 
     users.users.archie.extraGroups = [ "incus-admin" "docker" ];
 
