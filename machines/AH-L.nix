@@ -7,6 +7,8 @@
 
   hardware.enableRedistributableFirmware = true;
 
+  systemd.targets.suspend.enable = false;
+
   boot.kernelParams = [
     "acpi_enforce_resources=lax"
     "i915.enable_dc=0"
