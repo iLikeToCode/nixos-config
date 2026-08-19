@@ -74,6 +74,8 @@ in
           { workspace = "3"; output = "DP-1"; }
           { workspace = "11"; output = "DP-1"; }
           { workspace = "1"; output = "DP-2"; }
+          { workspace = "17"; output = "DP-2"; }
+          { workspace = "18"; output = "DP-2"; }
           { workspace = "19"; output = "DP-2"; }
           { workspace = "20"; output = "DP-2"; }
           { workspace = "10"; output = "HDMI-1"; }
