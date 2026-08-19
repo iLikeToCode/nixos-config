@@ -168,6 +168,7 @@
     libimobiledevice
     idevicerestore
     ifuse
+    telegram-desktop
   ];
 
   services.usbmuxd = {
