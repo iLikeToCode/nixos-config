@@ -59,7 +59,6 @@ in
       terminal = "xfce4-terminal";
       assigns = {
         "1" = [ { class = "firefox"; } ];
-        "2" = [ { class = "Xfce4-terminal"; } ];
         "3" = [ { class = "Code"; } ];
         "11" = [ { class = "PrismLauncher"; } ];
         "12" = [ { class = "^Minecraft"; } ];
@@ -71,6 +70,7 @@ in
       };
       workspaceOutputAssign =
         lib.optionals (osConfig.networking.hostName == "AH-W") [
+          { workspace = "2"; output = "DP-1"; }
           { workspace = "3"; output = "DP-1"; }
           { workspace = "11"; output = "DP-1"; }
           { workspace = "1"; output = "DP-2"; }
@@ -87,7 +87,7 @@ in
         "${mod}+shift+x" = "exec --no-startup-id i3lock --image $HOME/.lock-image";
 
         "${mod}+b" = "exec firefox";
-        "${mod}+Return" = "exec xfce4-terminal";
+        "${mod}+Return" = "exec sakura";
 
         # Screenshots (Flameshot)
 
