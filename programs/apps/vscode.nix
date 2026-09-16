@@ -13,6 +13,8 @@
         astro-build.astro-vscode
 
         rust-lang.rust-analyzer
+
+        ms-dotnettools.csdevkit
         
         # ── Python ───────────────────────────────────
         ms-python.python
