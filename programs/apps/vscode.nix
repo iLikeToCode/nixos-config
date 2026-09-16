@@ -15,6 +15,8 @@
         rust-lang.rust-analyzer
 
         ms-dotnettools.csdevkit
+        ms-dotnettools.vscode-dotnet-runtime
+        ms-dotnettools.csharp
         
         # ── Python ───────────────────────────────────
         ms-python.python
