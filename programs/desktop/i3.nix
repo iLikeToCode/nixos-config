@@ -14,7 +14,7 @@
     autorandr
     kdePackages.polkit-kde-agent-1
     xrandr
-    xfce4-terminal
+    sakura
   ];
 
   xdg.mime.enable = true;
