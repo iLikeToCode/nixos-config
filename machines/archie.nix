@@ -140,7 +140,6 @@
     teams-for-linux
     p3x-onenote
     ollama
-    claude-code
     opencode
     ripgrep
     openscad
