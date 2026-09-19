@@ -140,7 +140,6 @@
     teams-for-linux
     p3x-onenote
     ollama
-    claude-code
     opencode
     ripgrep
     openscad
@@ -152,15 +151,6 @@
     udiskie
     thunar
     jetbrains.rider
-    jetbrains.idea
-    jdk21
-    jetbrains.jdk-21
-    gradle
-    jetbrains.webstorm
-    jetbrains.rust-rover
-    jetbrains.pycharm
-    jetbrains.goland
-    jetbrains-toolbox
     dotnet-sdk_10
     dotnet-sdk_9
     arduino-ide
