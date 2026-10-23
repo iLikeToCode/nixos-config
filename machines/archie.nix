@@ -183,5 +183,8 @@
     SUBSYSTEM=="usb", ATTR{idVendor}=="0403", ATTR{idProduct}=="6001", MODE="0666"
   '';
 
+  networking.firewall.allowedUDPPorts = [ 6454 ];
+  networking.firewall.allowedTCPPorts = [ 9999 ];
+
   system.stateVersion = "26.05";
 }
