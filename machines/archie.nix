@@ -160,6 +160,7 @@
     ifuse
     telegram-desktop
     davinci-resolve
+    openclaw
   ];
 
   environment.variables = {
