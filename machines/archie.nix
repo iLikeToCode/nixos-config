@@ -145,9 +145,6 @@
     openscad
     seahorse
     prismlauncher
-    kicad
-    kicadAddons.kikit
-    ngspice
     udiskie
     thunar
     jetbrains.rider
