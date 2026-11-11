@@ -160,6 +160,10 @@
     openclaw
   ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "openclaw-2026.5.7"
+  ];
+
   environment.variables = {
     RUSTICL_ENABLE = "radeonsi";
   };
