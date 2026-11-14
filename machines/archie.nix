@@ -174,6 +174,8 @@
     package = pkgs.usbmuxd2;
   };
 
+  hardware.opentabletdriver.enable = true;
+
   services.udisks2.enable = true;
 
   services.udev.extraRules = ''
