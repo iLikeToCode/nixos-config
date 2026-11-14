@@ -162,12 +162,12 @@
 
   services.xserver.wacom.enable = true;
 
-  # Hand the Huion H420 (256c:006e) over to the wacom X11 driver
   services.xserver.inputClassSections = [
     ''
       Identifier "Huion H420 Wacom"
-      MatchProduct "HUION"
+      MatchProduct "HUION H420"
       MatchUSBID "256c:006e"
+      MatchDevicePath "/dev/input/event*"
       Driver "wacom"
     ''
   ];
