@@ -157,6 +157,19 @@
     ifuse
     telegram-desktop
     davinci-resolve
+    xf86_input_wacom
+  ];
+
+  services.xserver.wacom.enable = true;
+
+  # Hand the Huion H420 (256c:006e) over to the wacom X11 driver
+  services.xserver.inputClassSections = [
+    ''
+      Identifier "Huion H420 Wacom"
+      MatchProduct "HUION"
+      MatchUSBID "256c:006e"
+      Driver "wacom"
+    ''
   ];
 
   environment.variables = {
