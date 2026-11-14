@@ -174,7 +174,14 @@
     package = pkgs.usbmuxd2;
   };
 
-  hardware.opentabletdriver.enable = true;
+  hardware.opentabletdriver = {
+    enable = true;
+    daemon.enable = true;
+    blacklistedKernelModules = [
+      "hid-uclogic"
+      "wacom"
+    ];
+  };
 
   services.udisks2.enable = true;
 
