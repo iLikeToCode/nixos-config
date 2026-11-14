@@ -162,15 +162,15 @@
 
   services.xserver.wacom.enable = true;
 
-  services.xserver.inputClassSections = [
-    ''
-      Identifier "Huion H420 Wacom"
+  environment.etc."X11/xorg.conf.d/99-huion.conf".text = ''
+    Section "InputClass"
+      Identifier "Huion H420 Wacom Override"
       MatchProduct "HUION H420"
-      MatchUSBID "256c:006e"
       MatchDevicePath "/dev/input/event*"
       Driver "wacom"
-    ''
-  ];
+    EndSection
+  '';
+
 
   environment.variables = {
     RUSTICL_ENABLE = "radeonsi";
