@@ -158,6 +158,7 @@
     telegram-desktop
     davinci-resolve
     xf86_input_wacom
+    lorien
   ];
 
   services.xserver.wacom.enable = true;
