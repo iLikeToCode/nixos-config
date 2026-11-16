@@ -159,6 +159,7 @@
     davinci-resolve
     xf86_input_wacom
     lorien
+    xournalpp
   ];
 
   services.xserver.wacom.enable = true;
